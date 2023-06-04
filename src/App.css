@@ -1,20 +1,8 @@
 #root {
+  background-color:#abcdef;
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0;
+  padding: 0  ;
   text-align: center;
   color: black;
-}
-
-nav{
-  color: black;
-}
-nav ul{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-nav li {
-  list-style: none;
 }

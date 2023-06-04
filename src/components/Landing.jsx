@@ -6,7 +6,6 @@ function Landing() {
     <div>
         <div className='title-logo'>
         <h1>Our Cookbook</h1>
-        <Logo />
         </div>
         <Carousel />
     </div>

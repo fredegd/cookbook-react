@@ -1,12 +1,7 @@
-nav{
-    color: black;
-  }
-  nav ul{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  nav li {
-    list-style: none;
-  }
+.nav-links{
+  text-decoration: none;
+  padding: 0.2em;
+  height: 100%;
+  color: black;
+
+}
