@@ -14,7 +14,7 @@ import styled from "styled-components";
 export default function App() {
   return (
     <>
-         <Navbar />
+       <Navbar />
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/recipes" element={<RecipeList />} />
