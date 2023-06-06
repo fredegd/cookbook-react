@@ -9,16 +9,16 @@ import {
 
 function ContactInfo() {
   return (
-    <Container>
+    <Container className='text-start px-5 fa-lg'>
       <Row>
-        <h2>Contact us</h2>
+        <h2 className=''>Contact us</h2>
       </Row>
       <Row>
         <p>We're open for any suggestion or just to have a chat</p>
       </Row>
-      <Row>
-        <Col xs={1}>
-          <BsFillGeoAltFill />
+      <Row className='my-5'>
+        <Col xs={2}>
+          <BsFillGeoAltFill size={30} className='' />
         </Col>
         <Col>
           <p>
@@ -28,9 +28,9 @@ function ContactInfo() {
         </Col>
       </Row>
 
-      <Row>
-        <Col xs={1}>
-          <BsTelephoneFill />
+      <Row className='my-5'>
+        <Col xs={2}>
+          <BsTelephoneFill size={30} />
         </Col>
         <Col>
           <p>
@@ -40,9 +40,9 @@ function ContactInfo() {
         </Col>
       </Row>
 
-      <Row>
-        <Col xs={1}>
-          <BsFillSendFill />
+      <Row className='my-5'>
+        <Col xs={2}>
+          <BsFillSendFill size={30} />
         </Col>
         <Col>
           <p>
@@ -52,9 +52,9 @@ function ContactInfo() {
         </Col>
       </Row>
 
-      <Row>
-        <Col xs={1}>
-          <BsGlobeCentralSouthAsia />
+      <Row className='my-5'>
+        <Col xs={2}>
+          <BsGlobeCentralSouthAsia size={30} />
         </Col>
         <Col>
           <p>
