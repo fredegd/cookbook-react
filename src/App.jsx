@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import Landing from "./components/Landing";
+import Landing from "./pages/Landing";
 import RecipeList from "./pages/RecipeList";
 import Categories from "./pages/Categories";
 import About from "./pages/About";
