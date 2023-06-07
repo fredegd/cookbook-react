@@ -8,7 +8,6 @@ export default function Navbar() {
   const [show, setShow] = useState(false);
   const handleShow = () => {
       setShow(!show);
-      console.log(show)
   }
 
   return (
@@ -18,7 +17,11 @@ export default function Navbar() {
         <NavLink to="/">
           <Logo />
         </NavLink>
-
+        <NavTitle>
+         
+        <span class="highlight-container"><span class="highlight">Our&nbsp;&nbsp;&nbsp;</span></span>
+     <span class="highlight-container"><span class="highlight">Cookbook&nbsp;</span></span>
+        </NavTitle>
         <HamburgerMenu onClick={handleShow} show={show} setShow={setShow}/>
 
         <Menu show={show}>
@@ -34,6 +37,22 @@ export default function Navbar() {
   );
 }
 
+
+const NavTitle = styled.div`
+font-family: 'Playfair Display SC', serif; font-size: 3em;
+visibility: hidden;
+display: none;
+transition: all 0.3s;
+@media screen and (max-width: 700px) {
+  margin-left: -3em;
+  margin-top: 3em;
+
+   display:block;
+   visibility: visible;
+    font-size: 0.8em;
+  }
+`
+
 const StyledNav = styled.nav`
   width: 100%;
   height: 7em;
@@ -45,14 +64,14 @@ const StyledNav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 20;
-  background-color: yellow;
+  background-color:  #ffd500;
 `;
 
 const Menu = styled.ul`
-  margin: 0em 1em;
+  margin: 0em 4em;
   padding: 1em;
   list-style: none;
-  background: mediumseagreen;
+  background: rgb(60, 179, 113, 0.9);
   border-radius: 1.2em;
   font-size: 1rem;
   width: 75%;
@@ -70,12 +89,10 @@ const Menu = styled.ul`
     position: absolute;
     top: 10em;
     left: ${(props) => (props.show ? "0" : "-110%")};
-
-
     opacity: 1;
   }
   .active {
-    color: yellow;
+    color:  #ffd500;
     font-weight: bold;
   }
 `;
@@ -97,6 +114,7 @@ const MenuItem = styled(NavLink)`
   }
   &:hover:after {
     width: 100%;
-    background: yellow;
+    background:  #ffd500;
+    
   }
 `;

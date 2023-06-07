@@ -2,7 +2,7 @@ import "../App.css";
 import styled from "styled-components";
 
 export default function RecipeCard({ recipe }) {
-   console.log(recipe.fields.thumbnail.fields.file.url);
+  //  console.log(recipe.fields.thumbnail.fields.file.url);
   return (
     <Card>
       <RecipeImg

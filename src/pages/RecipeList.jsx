@@ -10,10 +10,9 @@ export default function RecipeList() {
     client
       .getEntries()
       .then((response) => {
-        console.log(response.items, "hurra :)");
         setRecipes(response.items);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   }, []);
   return (
 <CardsContainer>
