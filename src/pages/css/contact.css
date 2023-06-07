@@ -1,0 +1,13 @@
+.contact-container {
+  /* border: 1px yellow solid; */
+}
+
+.contact-col {
+  /* border: 2px green solid; */
+  height: 100%;
+  box-shadow: 0 0 2em yellow;
+}
+
+.col-md-4 {
+  padding: 0;
+}

@@ -9,14 +9,14 @@ import {
 
 function ContactInfo() {
   return (
-    <Container className='text-start px-5 fa-lg'>
+    <Container className='contact-col text-start p-5 fa-lg'>
       <Row>
         <h2 className=''>Contact us</h2>
       </Row>
-      <Row>
+      <Row className='pt-5 pb-4'>
         <p>We're open for any suggestion or just to have a chat</p>
       </Row>
-      <Row className='my-5'>
+      <Row className=''>
         <Col xs={2}>
           <BsFillGeoAltFill size={30} className='' />
         </Col>
@@ -28,7 +28,7 @@ function ContactInfo() {
         </Col>
       </Row>
 
-      <Row className='my-5'>
+      <Row className='pt-4'>
         <Col xs={2}>
           <BsTelephoneFill size={30} />
         </Col>
@@ -40,7 +40,7 @@ function ContactInfo() {
         </Col>
       </Row>
 
-      <Row className='my-5'>
+      <Row className='pt-4'>
         <Col xs={2}>
           <BsFillSendFill size={30} />
         </Col>
@@ -52,7 +52,7 @@ function ContactInfo() {
         </Col>
       </Row>
 
-      <Row className='my-5'>
+      <Row className='pt-4'>
         <Col xs={2}>
           <BsGlobeCentralSouthAsia size={30} />
         </Col>
