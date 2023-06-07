@@ -1,8 +1,8 @@
 #root {
-  background-color:#abcdef;
+  background-color: #abcdef;
   margin: 0;
-  padding: 0  ;
+  padding: 0;
   text-align: center;
   color: black;
+   height: 100vh;
 }
-
