@@ -6,10 +6,11 @@ import {
   BsTelephoneFill,
   BsGlobeCentralSouthAsia,
 } from 'react-icons/bs';
+import './css/contactInfo.css';
 
 function ContactInfo() {
   return (
-    <Container className='contact-col text-start p-5 fa-lg'>
+    <Container className='contactInfo-container text-start p-5 fa-lg'>
       <Row>
         <h2 className=''>Contact us</h2>
       </Row>
@@ -17,24 +18,24 @@ function ContactInfo() {
         <p>We're open for any suggestion or just to have a chat</p>
       </Row>
       <Row className=''>
-        <Col xs={2}>
-          <BsFillGeoAltFill size={30} className='' />
+        <Col className='bla' style={{ padding: 0 }} xs={2}>
+          <BsFillGeoAltFill />
         </Col>
         <Col>
           <p>
-            <span>Adress:</span>
+            <span>Adress: </span>
             Hauptstrasse 22 12345 Oberhausen
           </p>
         </Col>
       </Row>
 
       <Row className='pt-4'>
-        <Col xs={2}>
+        <Col style={{ padding: 0 }} xs={2}>
           <BsTelephoneFill size={30} />
         </Col>
         <Col>
           <p>
-            <span>Phone:</span>
+            <span>Phone: </span>
             +49 171 8473938
           </p>
         </Col>
@@ -46,7 +47,7 @@ function ContactInfo() {
         </Col>
         <Col>
           <p>
-            <span>Email:</span>
+            <span>Email: </span>
             info@cookbook.com
           </p>
         </Col>
@@ -58,7 +59,7 @@ function ContactInfo() {
         </Col>
         <Col>
           <p>
-            <span>Website:</span>
+            <span>Website: </span>
             cookbook.com
           </p>
         </Col>

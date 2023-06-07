@@ -4,7 +4,7 @@ import './css/contactForm.css';
 
 function ContactForm() {
   return (
-    <Form className='contacttext-start contact-col p-5'>
+    <Form className='contactForm text-start p-5'>
       <h2 className='mb-5'>Send us a message</h2>
       <Form.Group className='my-4' controlId='formBasicEmail'>
         <Form.Control className='' type='text' placeholder='Name' />

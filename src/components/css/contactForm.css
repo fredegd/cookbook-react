@@ -1,27 +1,32 @@
-.contacttext-start {
+.contactForm {
   background-color: yellow;
+  box-shadow: 0em 0 1em yellow;
+  height: 100%;
 }
 
-.contacttext-start input {
+.contactForm input {
   background-color: transparent;
   border: none;
   border-radius: 0;
   border-bottom: 2px solid green;
 }
 
-.contacttext-start textarea {
+.contactForm textarea {
   background-color: transparent;
   border: none;
   border-radius: 0;
   border-bottom: 2px solid green;
 }
 
-.contacttext-start input:focus {
+.contactForm input:focus {
   background-color: transparent;
   /* border: none; */
   box-shadow: none;
 }
 
-.contacttext-start button {
+.contactForm button {
   background-color: green;
+  /* font-size: large; */
+  font-weight: 500;
+  text-transform: uppercase;
 }
