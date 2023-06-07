@@ -1,0 +1,11 @@
+.carouselImage{
+    max-height: 650px;
+    overflow: hidden;
+}
+.carousel-description{
+    background: rgb(60, 179, 113, 0.9);
+    color: #abcdef;
+    border-radius: 1.2em;
+    font-weight: 700;
+  font-size: 1rem;
+}
