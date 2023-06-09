@@ -1,23 +1,51 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { client } from "../client";
+import { useParams, Link } from "react-router-dom";
 
-function RecipeView() {
+export default function RecipeView() {
+
+  const [recipe, setRecipe] = useState(null);
+  const { id } = useParams();
+
+  useEffect(() => {
+    client
+      .getEntry(id)
+      .then((response) => {
+        console.log(response.fields, "testtt");
+        setRecipe(response.fields);
+    
+      })
+      .catch((err) => console.log(err));
+      }, [])
+
+      if (!recipe) {
+        return <div>Loading...</div>;
+      }
+
+      const imageUrl = recipe.thumbnail.fields.file.url.startsWith('https:')
+        ? recipe.thumbnail.fields.file.url
+        : `http:${recipe.thumbnail.fields.file.url}`;
+
+
   return (
     <div>
-        <h1>Title</h1>
-        <h4>Short description</h4>
-        <p>Facts</p>
-        <p>Ingredients
+        <h1>{recipe.title}</h1>
+        <h4>{recipe.subtitle}</h4>
+        <div>
+          <p>Needed time: {recipe.cookingTime}</p>
+          <p>Difficulty: {recipe.difficulty}</p>
+        </div>
+        
+        <div>Ingredients
             <ul>
                 <li>Ingredient 1</li>
                 <li>Ingredient 2</li>
                 <li>Ingredient 3</li>
                 <li>Ingredient 4</li>
             </ul>
-        </p>
-        <img src='https://www.thedeliciouscrescent.com/wp-content/uploads/2016/01/Tabbouleh-Salad-1.jpg'/>
-        <p>Directions</p>
+        </div>
+        <img src={imageUrl} alt='"Recipe' />
+        <p>Instructions</p>
     </div>
   )
 }
-
-export default RecipeView

@@ -20,10 +20,11 @@ export default function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/recipes" element={<RecipeList />} />
           <Route path="/Categories" element={<Categories />} />
+          <Route path="/recipes/:id" element={<RecipeView />} />
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
         </Routes>
-        <RecipeView/>
+        
      <Footer />
     </>
   );
