@@ -2,22 +2,22 @@
   padding: 0%;
   background-color: transparent;
   border: none;
-  box-shadow: 0 0 1rem grey;
-  margin-top: 5rem;
-  background-color: rgba(255, 255, 0, 0.78);
+  box-shadow: 0 0 1rem yellow;
+  /* margin-top: 5rem; */
+  background-color: transparent;
   height: auto;
 }
 
 .person-container img {
   margin: auto;
-  width: 50%;
-  border-radius: 50%;
+  height: auto;
+  width: 70%;
+  border-radius: 10%;
   display: block;
-  /* transform: translateX(5rem); */
-  transform: translateY(-5rem);
-  box-shadow: 0 0 1rem yellow;
+  /* transform: translateY(-5rem); */
+  box-shadow: 0 0 0.5rem grey;
 }
 
 .person-container .card-myBody {
-  transform: translateY(-3rem);
+  /* transform: translateY(-3rem); */
 }
