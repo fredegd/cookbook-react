@@ -8,16 +8,8 @@ export default function About() {
     <Container fluid>
       <Row className='person-container df-flex-md-row justify-content-around my-5'>
         <PersonCard title='Elvis B' body={elvis} imgSrc='elvisB.png' />
-        <PersonCard
-          title='Anne P'
-          body='ajsdfhaskjdfhjaskhdfsakjldfh'
-          imgSrc='anneP.png'
-        />
-        <PersonCard
-          title='Fred '
-          body='ajsdfhaskjdfhjaskhdfsakjldfh'
-          imgSrc='fred.jpg'
-        />
+        <PersonCard title='Anne P' body={elvis} imgSrc='anneP.png' />
+        <PersonCard title='Fred ' body={elvis} imgSrc='fred.jpg' />
       </Row>
     </Container>
   );

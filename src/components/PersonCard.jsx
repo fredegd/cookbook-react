@@ -4,8 +4,8 @@ import './css/personCard.css';
 
 function PersonCard({ title, body, imgSrc }) {
   return (
-    <Card style={{ width: '20rem' }}>
-      <Card.Img variant='top' src={`/src/images/${imgSrc}`} />
+    <Card className='my-3' style={{ width: '20rem' }}>
+      <Card.Img variant='top' className='mt-4' src={`/src/images/${imgSrc}`} />
       <Card.Body className='card-myBody'>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{body}</Card.Text>
