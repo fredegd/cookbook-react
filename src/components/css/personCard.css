@@ -1,0 +1,23 @@
+.person-container .card {
+  padding: 0%;
+  background-color: transparent;
+  border: none;
+  box-shadow: 0 0 1rem grey;
+  margin-top: 5rem;
+  background-color: rgba(255, 255, 0, 0.78);
+  height: auto;
+}
+
+.person-container img {
+  margin: auto;
+  width: 50%;
+  border-radius: 50%;
+  display: block;
+  /* transform: translateX(5rem); */
+  transform: translateY(-5rem);
+  box-shadow: 0 0 1rem yellow;
+}
+
+.person-container .card-myBody {
+  transform: translateY(-3rem);
+}
