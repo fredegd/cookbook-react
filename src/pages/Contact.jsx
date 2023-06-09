@@ -7,10 +7,10 @@ export default function Contact() {
   return (
     <Container className='my-4'>
       <Row className='contact-container df-flex-md-row justify-content-center mt-2 gap-0'>
-        <Col md={4} style={{ padding: 0 }}>
+        <Col xs={10} md={5} style={{ padding: 0 }}>
           <ContactForm className=''></ContactForm>
         </Col>
-        <Col md={4} style={{ padding: 0 }}>
+        <Col xs={10} md={5} style={{ padding: 0 }}>
           <ContactInfo className=''></ContactInfo>
         </Col>
       </Row>
