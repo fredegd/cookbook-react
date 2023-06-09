@@ -8,6 +8,7 @@ import Categories from "./pages/Categories";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import RecipeView from "./components/RecipeView";
 import "./App.css";
 import styled from "styled-components";
 
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
         </Routes>
+        <RecipeView/>
      <Footer />
     </>
   );
