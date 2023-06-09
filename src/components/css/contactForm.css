@@ -25,8 +25,15 @@
 }
 
 .contactForm button {
-  background-color: green;
+  background-color: mediumseagreen;
   /* font-size: large; */
   font-weight: 500;
   text-transform: uppercase;
+  color: black;
+  border: none;
+}
+
+.contactForm button:hover {
+  color: yellow;
+  background-color: mediumseagreen;
 }

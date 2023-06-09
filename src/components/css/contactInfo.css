@@ -4,17 +4,20 @@
   box-shadow: 0em 0 1em yellow;
 }
 
-.bla {
+.center-icon {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  /* align-items: center; */
 }
 
 p {
+  text-align: start;
   margin-bottom: 0;
+  padding: auto;
 }
 
 svg {
   display: block;
-  width: auto;
-  height: 75%;
+  /* width: 50%; */
+  height: auto;
 }
