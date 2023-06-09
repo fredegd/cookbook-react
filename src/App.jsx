@@ -1,8 +1,7 @@
-import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
-
+import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import Navbar from "./components/Navbar";
-import Landing from "./components/Landing";
+import Landing from "./pages/Landing";
 import RecipeList from "./pages/RecipeList";
 import Categories from "./pages/Categories";
 import About from "./pages/About";
@@ -11,10 +10,12 @@ import Footer from "./components/Footer";
 import RecipeView from "./components/RecipeView";
 import "./App.css";
 import styled from "styled-components";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
   return (
     <>
+
          <Navbar />
         <Routes>
           <Route path="/" element={<Landing />} />
@@ -26,6 +27,7 @@ export default function App() {
         </Routes>
         
      <Footer />
+
     </>
   );
 }
