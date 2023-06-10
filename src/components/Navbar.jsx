@@ -64,6 +64,7 @@ export default function Navbar() {
 const NavTitle = styled.div`
   font-family: "Playfair Display SC", serif;
   font-size: 3em;
+
   display: none;
   transition: all 0.3s;
   @media screen and (max-width: 770px) {
@@ -112,6 +113,7 @@ const StyledNav = styled.nav`
   font-size: 1.5rem;
   position: sticky;
   top: 0;
+
   background-color: ${cls.col1};
   @media screen and (max-width: 950px) {
   height: 7em;
@@ -143,6 +145,7 @@ const Menu = styled.ul`
     width: 100%;
     height: 100vh;
     position: absolute;
+
     top: 0;
     /* top: 10.5em; */
     left: ${(props) => (props.show ? "0" : "-110%")};
