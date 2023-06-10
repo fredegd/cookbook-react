@@ -65,4 +65,3 @@ const CrdText = styled.div`
   border-radius: 0 0 2em 2em;
   background: rgb(60, 179, 113, 0.9);`;
 
-`
