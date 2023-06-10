@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import {cls} from '../colors';
 export default function HamburgerMenu({show,setShow}) {
     // const [click, setClick] = useState(false);
     const handleClick = () => {
@@ -16,15 +16,15 @@ export default function HamburgerMenu({show,setShow}) {
 
 const MenuLabel = styled.div`
   background-color: #abcdef;
-  margin-right: 1em;
   right: 3rem;
   border-radius: 50%;
-  height: 7rem;
-  width: 7rem;
+  height: 5rem;
+  width: 5rem;
   cursor: default;
-  z-index: 1000;
+  z-index: 1;
   text-align: center;
-  @media screen and (min-width: 700px) {
+  display: block;
+  @media screen and (min-width: 770px) {
     display: none;
   }
 `;
@@ -35,12 +35,12 @@ const Icon = styled.span`
   width: 3rem;
   height: 3px;
   display: inline-block;
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
   transition: all 0.3s;
   &::before,
   &::after {
     content: "";
-    background-color: black;
+    background-color: ${cls.col4};
     width: 3rem;
     height: 3px;
     display: inline-block;

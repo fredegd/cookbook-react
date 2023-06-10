@@ -13,7 +13,6 @@ export default function RecipeList() {
 
   useEffect(() => {
     client
-
       .getEntries({
         content_type: 'cookbook',
       })
@@ -54,21 +53,21 @@ const CardsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
+  text-decoration: none;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  transition: all 0.9s;
+  transition: all 0.2s;
 `;
 
 const CardGrid = styled.div`
   width: 70%;
   display: grid;
-  /* gap: 2rem; */
   grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
   justify-content: center;
+  transition: all 2s;
+
   @media screen and (max-width: 1000px){
     width: 95%;
-
   }
 `;
