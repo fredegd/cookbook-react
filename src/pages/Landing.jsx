@@ -19,11 +19,13 @@ export default function Landing() {
   }, []);
 
   return (
+
     <div className=" d-flex-column justify-content-center">
       <PageTitle first={"Our"} second={`Cookbook`} />
       <div className="container fluid w-75">
         <HomeCarousel />
       </div>
+
     </div>
   );
 }
