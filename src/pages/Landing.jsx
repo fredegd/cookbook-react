@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import PageTitle from "../components/PageTitle";
+import HomeCarousel from "../components/HomeCarousel";
+import { client } from "../client";
+import "../App.css";
+export default function Landing() {
+  const [recipes, setRecipes] = useState([]);
 
-import ControlledCarousel from '../components/ControlledCarousel';
-import { client } from '../client';
-function Landing() {
-  const [recipes, setRecipes] = useState();
 
   useEffect(() => {
     client
@@ -11,20 +13,18 @@ function Landing() {
         content_type: 'cookbook',
       })
       .then((response) => {
-        console.log(response.items);
         setRecipes(response.items);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   }, []);
 
   return (
-    <div>
-      <div className='title-logo'>
-        <h1>Our Cookbook</h1>
+    <div className=" d-flex-column justify-content-center">
+      <PageTitle first={"Our"} second={`Cookbook`} />
+      <div className="container fluid w-75">
+        <HomeCarousel />
       </div>
-      <ControlledCarousel recipes={recipes} />
     </div>
   );
 }
 
-export default Landing;

@@ -1,8 +1,11 @@
+import Lebanese from "../components/Lebanese"
+import PageTitle from "../components/PageTitle";
 
 export default function Categories() {
-  return (
-    <div>Categories</div>
-    
+  return(
+    <div>
+      <PageTitle first={"Categories"}/>
+      <Lebanese />
+    </div>
   )
 }
-
