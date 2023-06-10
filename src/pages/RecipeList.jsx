@@ -25,26 +25,31 @@ export default function RecipeList() {
     console.log("Recipe clicked with ID:", recipeId);
   }
   return (
-
     <div>
       <div>
-        {recipes.map((recipe) => {
-          return <Link key={recipe.sys.id} to={`/recipes/${recipe.sys.id}`} ><button >{recipe.fields.title}</button></Link>;
-        })}
+        <div>
+          {recipes.map((recipe) => {
+            return (
+              <Link key={recipe.sys.id} to={`/recipes/${recipe.sys.id}`}>
+                <button>{recipe.fields.title}</button>
+              </Link>
+            );
+          })}
+        </div>
       </div>
-      
+
+      {/* <CardsContainer>
+        <CardGrid>
+          {recipes.map((recipe) => {
+            return (
+              <div key={recipe.sys.id}>
+                <RecipeCard recipe={recipe} />
+              </div>
+            );
+          })}
+        </CardGrid>
+      </CardsContainer> */}
     </div>
-
-<CardsContainer>
-    <CardGrid>
-      {recipes.map((recipe) => {
-        return <div key={recipe.sys.id}>
-          <RecipeCard recipe={recipe}/>
-        </div>;
-      })}
-    </CardGrid>
- </CardsContainer>
-
   );
 }
 
