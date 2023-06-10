@@ -6,9 +6,12 @@ import "../App.css";
 export default function Landing() {
   const [recipes, setRecipes] = useState([]);
 
+
   useEffect(() => {
     client
-      .getEntries()
+      .getEntries({
+        content_type: 'cookbook',
+      })
       .then((response) => {
         setRecipes(response.items);
       })
@@ -24,3 +27,4 @@ export default function Landing() {
     </div>
   );
 }
+

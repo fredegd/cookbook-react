@@ -1,37 +1,53 @@
-import { useEffect, useState } from "react";
-import styled from "styled-components";
-import { client } from "../client";
+
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { client } from '../client';
+import RecipeView from '../components/RecipeView';
+import { useParams, Link } from 'react-router-dom';
 import PageTitle from "../components/PageTitle";
-import RecipeCard from "../components/RecipeCard";
+import RecipeCard from '../components/RecipeCard';
 
 export default function RecipeList() {
   const [recipes, setRecipes] = useState([]);
+  let { id } = useParams();
 
   useEffect(() => {
     client
-      .getEntries({ content_type: "cookbook" })
+
+      .getEntries({
+        content_type: 'cookbook',
+      })
       .then((response) => {
+        console.log(response.items, 'hurra :)');
         setRecipes(response.items);
       })
       .catch((err) => console.error(err));
   }, []);
+
+  const handleRecipeClick = (recipeId) => {
+    id = recipeId;
+    console.log('Recipe clicked with ID:', recipeId);
+  };
   return (
     <>
+
       <PageTitle first={"All"} second={`Recipes`} />
-      <CardsContainer>
+       <CardsContainer>
         <CardGrid>
           {recipes.map((recipe) => {
             return (
-              <div key={recipe.sys.id}>
+              <Link key={recipe.sys.id}  to={`/recipes/${recipe.sys.id}`}>
                 <RecipeCard recipe={recipe} />
-              </div>
+              </Link>
             );
           })}
         </CardGrid>
       </CardsContainer>
+      
     </>
   );
 }
+
 
 const CardsContainer = styled.div`
   margin-top: 3em;
