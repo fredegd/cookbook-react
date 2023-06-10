@@ -1,5 +1,9 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
 #root {
-    --s: 20px; /* control the size */
+  /*--s: 20px; /* control the size 
     --c1: #c7956d;
     --c2: #5e4352;
     
@@ -13,37 +17,99 @@
       calc(8*var(--s)) calc(8*var(--s)) var(--g),
       calc(3*var(--s)) calc(3*var(--s)) var(--g),
       linear-gradient( 45deg,var(--c)) 0 0/var(--d),
-      linear-gradient(-45deg,var(--c)) 0 0/var(--d) var(--c2);
-  
-  
+      linear-gradient(-45deg,var(--c)) 0 0/var(--d) var(--c2);*/
+
   /* background-color: #abcdef; */
   margin: 0;
   padding: 0;
   text-align: center;
   color: black;
-   height: auto;
-   font-family: 'Montserrat Alternates', sans-serif;
+  height: auto;
+  font-family: "Montserrat Alternates", sans-serif;
+  /* background-image: url(./components/images/islamic-new-year-pattern-background.jpg);
+  background-size: 300px; */
 }
 
+/* ////////////////////////////   Recipe-View   /////////////////////////////// */
 
+.recipe-view-container {
+  background-color: rgba(243, 222, 129, 0.201);
+  background-size: cover;
+}
+.recipe-title{
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+.recipe-sub-title {
+  font-size: 15px;
+  padding: 0px 50px 0px;
+}
+.recipe-middle{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 0px 0px;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.recipe-facts{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.recipe-facts h4{
+  font-size: 12px;
+  margin: 0px;
+}
+.recipe-ingredients{
+  padding: 0px 0px 0px;
+}
+.recipe-img{
+  max-width: 650px;
+  border-radius: 10px;
+}
+.recipe-instructions{
+  margin-bottom: 40px;
+}
+.recipe-instructions ul{
+  list-style: none;
+}
+.recipe-instructions p{
+  margin-bottom: 5px;
+}
+/* ////////////////////////////   end: Recipe-View   /////////////////////////////// */
 
-/* ////////////////////////////   Recipe-View   ///////////////////////////////
+.navbar{
+  /* control the size */
+  /* --s: 15px; 
+  
+  --_g: #0000 83%,#b09f79 85% 99%,#0000 101%;
+  background:
+    radial-gradient(27% 29% at right ,var(--_g)) calc(var(--s)/ 2) var(--s),
+    radial-gradient(27% 29% at left  ,var(--_g)) calc(var(--s)/-2) var(--s),
+    radial-gradient(29% 27% at top   ,var(--_g)) 0 calc(var(--s)/ 2),
+    radial-gradient(29% 27% at bottom,var(--_g)) 0 calc(var(--s)/-2)
+    #476074;
+  background-size: calc(2*var(--s)) calc(2*var(--s));
+   */
+background-image: url(./components/images/islamic-new-year-pattern-background.jpg);
+  background-size: 300px;
+}
 
-.recipe-page{}
-.recipe-sub-title{}
-.recipe-facts{}
-.recipe-ingredients{}
-.recipe-img{}
-.recipe-instructions{} */
+  
+  
+  
 
-.page-title{
+.page-title {
   margin: 1em;
-  font-family: 'Playfair Display SC', serif;
+  font-family: "Playfair Display SC", serif;
   font-size: 3em;
-  transition:  0.4s;
+  transition: 0.4s;
 }
 
-.highlight-container, .highlight {
+.highlight-container,
+.highlight {
   position: relative;
 }
 .highlight-container {
@@ -56,7 +122,12 @@
   width: 130%;
   position: absolute;
   background: #ffd500;
-  background-image: linear-gradient(135deg, #ffd500 0%, #ffd500 50%, #abcdef 100%);
+  background-image: linear-gradient(
+    135deg,
+    #ffd500 0%,
+    #ffd500 50%,
+    #abcdef 100%
+  );
   transform: rotate(-2deg);
   top: -0.3em;
   left: -0.5em;
@@ -65,11 +136,16 @@
 
 @media screen and (max-width: 700px) {
   .highlight-container:before {
-  background-image: linear-gradient(135deg, #ffd500 0%,#abcdef 40%, #abcdef 100%);
+    background-image: linear-gradient(
+      135deg,
+      #ffd500 0%,
+      #abcdef 40%,
+      #abcdef 100%
+    );
   }
-  .page-title{
+  .page-title {
     font-size: 1em;
-opacity:0;
+    opacity: 0;
   }
 }
 
