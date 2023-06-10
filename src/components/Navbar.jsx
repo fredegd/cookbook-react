@@ -8,7 +8,6 @@ export default function Navbar() {
   const [show, setShow] = useState(false);
   const handleShow = () => {
       setShow(!show);
-      console.log(show)
   }
 
   return (
@@ -18,7 +17,11 @@ export default function Navbar() {
         <NavLink to="/">
           <Logo />
         </NavLink>
-
+        <NavTitle>
+         
+        <span className="highlight-container"><span className="highlight">Our&nbsp;&nbsp;&nbsp;</span></span>
+     <span className="highlight-container"><span className="highlight">Cookbook&nbsp;</span></span>
+        </NavTitle>
         <HamburgerMenu onClick={handleShow} show={show} setShow={setShow}/>
 
         <Menu show={show}>
@@ -34,9 +37,25 @@ export default function Navbar() {
   );
 }
 
+
+const NavTitle = styled.div`
+font-family: 'Playfair Display SC', serif; font-size: 3em;
+visibility: hidden;
+display: none;
+transition: all 0.3s;
+@media screen and (max-width: 700px) {
+  margin-left: -3em;
+  margin-top: 3em;
+
+   display:block;
+   visibility: visible;
+    font-size: 0.8em;
+  }
+`
+
 const StyledNav = styled.nav`
   width: 100%;
-  height: 7em;
+  height: 6em;
   padding: 0;
   display: flex;
   justify-content: space-between;
@@ -45,16 +64,17 @@ const StyledNav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 20;
-  background-color: yellow;
+  background-color:  #ffd500;
 `;
 
 const Menu = styled.ul`
-  margin: 0em 1em;
+  margin: 0em 3em;
   padding: 1em;
   list-style: none;
-  background: mediumseagreen;
+  background: rgb(60, 179, 113, 0.9);
   border-radius: 1.2em;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
   width: 75%;
   display: flex;
   flex-direction: row;
@@ -63,19 +83,19 @@ const Menu = styled.ul`
   transition: all 0.3s;
   @media screen and (max-width: 700px) {
     margin: 0;
-    padding: 0;
+    padding-top: 2em;
     border-radius: 0;
     flex-direction: column;
+    justify-content: flex-end;
     width: 100%;
+    height: 800px;
     position: absolute;
-    top: 10em;
+    top:7.5em;
     left: ${(props) => (props.show ? "0" : "-110%")};
-
-
     opacity: 1;
   }
   .active {
-    color: yellow;
+    color:  #ffd500;
     font-weight: bold;
   }
 `;
@@ -86,7 +106,10 @@ const MenuItem = styled(NavLink)`
   height: 100%;
   color: black;
   padding: 0.5em;
-  /* border: 2px solid mediumseagreen; */
+  @media screen and (max-width: 700px) {
+   margin: 2em;
+  }
+
   &:after {
     content: "";
     display: block;
@@ -97,6 +120,7 @@ const MenuItem = styled(NavLink)`
   }
   &:hover:after {
     width: 100%;
-    background: yellow;
+    background:  #ffd500;
+    
   }
 `;
