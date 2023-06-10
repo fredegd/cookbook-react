@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { client } from '../client';
-import RecipeView from '../components/RecipeView';
+import { cls } from "../colors";
 import { useParams, Link } from 'react-router-dom';
 import PageTitle from "../components/PageTitle";
 import RecipeCard from '../components/RecipeCard';
@@ -13,7 +13,6 @@ export default function RecipeList() {
 
   useEffect(() => {
     client
-
       .getEntries({
         content_type: 'cookbook',
       })
@@ -37,9 +36,9 @@ export default function RecipeList() {
         <CardGrid>
           {recipes.map((recipe) => {
             return (
-              <Link key={recipe.sys.id}  to={`/recipes/${recipe.sys.id}`}>
+              <Linked key={recipe.sys.id}  to={`/recipes/${recipe.sys.id}`}>
                 <RecipeCard recipe={recipe} />
-              </Link>
+              </Linked>
             );
           })}
         </CardGrid>
@@ -55,21 +54,27 @@ const CardsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
+  text-decoration: none;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  transition: all 0.9s;
+  transition: all 0.2s;
 `;
 
 const CardGrid = styled.div`
   width: 70%;
   display: grid;
-  /* gap: 2rem; */
+  gap: 1.5em;
   grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
   justify-content: center;
+  transition: all 2s;
+
   @media screen and (max-width: 1000px){
     width: 95%;
-
   }
 `;
+
+const Linked = styled(Link)`
+text-decoration: none;
+color: ${cls.col4};;
+`

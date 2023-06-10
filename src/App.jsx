@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Landing from "./pages/Landing";
@@ -16,7 +15,7 @@ export default function App() {
   return (
     <>
 
-         <Navbar />
+        <Nb />
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/recipes" element={<RecipeList />} />
@@ -31,3 +30,7 @@ export default function App() {
     </>
   );
 }
+
+const Nb = styled(Navbar)`
+position: fixed;
+`
