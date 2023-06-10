@@ -1,29 +1,32 @@
 import { useState, useEffect } from "react";
-
-import ControlledCarousel from "../components/ControlledCarousel"
+import PageTitle from "../components/PageTitle";
+import HomeCarousel from "../components/HomeCarousel";
 import { client } from "../client";
-function Landing() {
+import "../App.css";
+export default function Landing() {
   const [recipes, setRecipes] = useState([]);
+
 
   useEffect(() => {
     client
-      .getEntries()
-      .then((response) => {
-     setRecipes(response.items);
-    
+      .getEntries({
+        content_type: 'cookbook',
       })
-      .catch((err) => console.log(err));
+      .then((response) => {
+        setRecipes(response.items);
+      })
+      .catch((err) => console.error(err));
   }, []);
 
-
   return (
-    <div>
-        <div className='title-logo'>
-        <h1>Our Cookbook</h1>
-        </div>
-        {/* <ControlledCarousel recipes={recipes} /> */}
+
+    <div className=" d-flex-column justify-content-center">
+      <PageTitle first={"Our"} second={`Cookbook`} />
+      <div className="container fluid w-75">
+        <HomeCarousel />
+      </div>
+
     </div>
-  )
+  );
 }
 
-export default Landing

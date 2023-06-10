@@ -1,68 +1,75 @@
-import { useEffect, useState } from "react";
-import styled from "styled-components";
-import { client } from "../client";
-import RecipeView from "../components/RecipeView";
-import { useParams, Link } from "react-router-dom";
-import RecipeCard from "../components/RecipeCard"
 
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { client } from '../client';
+import RecipeView from '../components/RecipeView';
+import { useParams, Link } from 'react-router-dom';
+import PageTitle from "../components/PageTitle";
+import RecipeCard from '../components/RecipeCard';
 
 export default function RecipeList() {
   const [recipes, setRecipes] = useState([]);
-  let {id} = useParams();
+  let { id } = useParams();
 
   useEffect(() => {
     client
-      .getEntries()
+
+      .getEntries({
+        content_type: 'cookbook',
+      })
       .then((response) => {
-        console.log(response.items, "hurra :)");
+        console.log(response.items, 'hurra :)');
         setRecipes(response.items);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   }, []);
 
   const handleRecipeClick = (recipeId) => {
-    id = recipeId
-    console.log("Recipe clicked with ID:", recipeId);
-  }
+    id = recipeId;
+    console.log('Recipe clicked with ID:', recipeId);
+  };
   return (
-    <div>
-      <div>
-        <div>
-          {recipes.map((recipe) => {
-            return (
-              <Link key={recipe.sys.id} to={`/recipes/${recipe.sys.id}`}>
-                <button>{recipe.fields.title}</button>
-              </Link>
-            );
-          })}
-        </div>
-      </div>
 
-      {/* <CardsContainer>
+    <>
+
+      <PageTitle first={"All"} second={`Recipes`} />
+       <CardsContainer>
         <CardGrid>
           {recipes.map((recipe) => {
             return (
-              <div key={recipe.sys.id}>
+              <Link key={recipe.sys.id}  to={`/recipes/${recipe.sys.id}`}>
                 <RecipeCard recipe={recipe} />
-              </div>
+              </Link>
             );
           })}
         </CardGrid>
-      </CardsContainer> */}
-    </div>
+      </CardsContainer>
+      
+    </>
   );
 }
 
+
 const CardsContainer = styled.div`
-margin-top: 3em;
-display: flex;
-justify-content: center;
-`
+  margin-top: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  transition: all 0.9s;
+`;
 
 const CardGrid = styled.div`
-width: 90%;
-display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
-justify-content: center;
-`
+  width: 70%;
+  display: grid;
+  /* gap: 2rem; */
+  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+  justify-content: center;
+  @media screen and (max-width: 1000px){
+    width: 95%;
+
+  }
+`;
