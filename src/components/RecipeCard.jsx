@@ -4,13 +4,15 @@ import styled from "styled-components";
 export default function RecipeCard({ recipe }) {
   //  console.log(recipe.fields.thumbnail.fields.file.url);
   return (
-    <Card>
-      <RecipeImg
-        src={recipe.fields.thumbnail.fields.file.url}
-        alt={recipe.fields.thumbnail.fields.title}
-      />
+    <CardWrap>
+      <Img
+        style={{
+          backgroundImage: `url(${recipe.fields.thumbnail.fields.file.url})`,
+        }}
+      >
+      </Img>
       <CrdText>
-        <h4>{recipe.fields.title}</h4>
+        <h5>{recipe.fields.title}</h5>
         <p>
           Cooking Time: <span> {recipe.fields.cookingTime}</span>{" "}
         </p>
@@ -21,24 +23,44 @@ export default function RecipeCard({ recipe }) {
           Rating: <span> noData of 5</span>{" "}
         </p>
       </CrdText>
-    </Card>
+    </CardWrap>
   );
 }
 
-const Card = styled.div`
+const CardWrap = styled.div`
+  height: auto;
+  margin: 1em;
+  min-width: 300px;
+  background: white;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: center;
+  transition: all 0.5s;
+  border-radius:2em;
+  &:hover{
+    margin: 1em 0 ;
+  }
+  &:hover>*{
+    width: 103%;
+  }
+
+  `
+
+const Img = styled.div`
+  min-height: 300px;
+  min-width: 300px;
   width: 100%;
-`;
-const RecipeImg = styled.img`
-  width: 100%;
-  border-radius: 2em 2em 0 0;
+  background-clip: content-box;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius:2em 2em 0 0 ;
+
 `;
 
 const CrdText = styled.div`
-  line-height: 0.2em;
+  width: 100%;
+  height: auto;
+  /* line-height: 0.8em; */
   border-radius: 0 0 2em 2em;
-  background: white;
-  padding: 0 1em;
-`;
+  background: rgb(60, 179, 113, 0.9);`;

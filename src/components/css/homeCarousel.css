@@ -1,0 +1,64 @@
+
+
+.swiper-container{
+  .swiper-button-prev,
+  .swiper-button-next{
+    color: white;
+    top: auto;
+    bottom: 1.5em;
+    width:2em;
+    border-radius: 1em;
+    background: rgb(255, 0, 251);
+
+    & :after {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+  }
+  .swiper-button-prev,
+  .swiper-container-rtl  .swiper-button-next{
+    left: 50%;
+    margin-left: -44px;
+    right: auto;
+  }
+
+  .swiper-button-next,
+  .swiper-container-rtl .swiper-button-prev{
+    right: auto;
+    left: 50%;
+    margin-left: 5px;
+
+}}
+
+
+.swiper-slide-active{
+  .slideWrap{
+      filter: sepia(0%);
+
+      >*{
+          opacity:1;
+          transform: none;
+
+          @for $i from 0 to 15 {
+              &:nth-child(#{}){
+                  transition-delay:$i*0.1+0.3s;
+              }
+          }
+          .btn{
+              transition-delay: initial !important;
+          }
+      }
+  }
+  .textWrap{
+      >*{
+          opacity:1;
+          transform: none;
+          @for $i from 0 to 15 {
+              &:nth-child()(#{$i+1}){
+                  transition-delay: $i*0.3+1s;
+              }
+          }
+      }
+  }
+}

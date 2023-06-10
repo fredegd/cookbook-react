@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel'
 import CarouselItem from 'react-bootstrap/CarouselItem'
-import "./css/controlledCarousel.css"
 
 export default  function ControlledCarousel({recipes}) {
   const [index, setIndex] = useState(0);
@@ -13,11 +12,11 @@ return(
  
   <Carousel  activeIndex={index} onSelect={handleSelect}>
   {recipes.map((recipe) => {
-    console.log(recipe)
+    //  console.log(recipe)
     return (
-      <Carousel.Item  key={recipe.id}>
+      <Carousel.Item  key={recipe.sys.id}>
         <img
-          className="rounded carouselImage"
+          className=" carouselImage"
           src={recipe.fields.thumbnail.fields.file.url}
           alt="Slide"
         />
