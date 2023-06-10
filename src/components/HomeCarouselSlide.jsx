@@ -22,6 +22,7 @@ const SlideWrap = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  border-radius: 2em;
   filter: sepia(20%);
   transition: all 0.5s;
    >*{
