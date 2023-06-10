@@ -28,7 +28,7 @@ export default function RecipeView() {
 
 
   return (
-    <div>
+    <div className='recipePage'>
         <h1>{recipe.title}</h1>
         <h4>{recipe.subtitle}</h4>
         <div>

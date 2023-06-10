@@ -21,7 +21,7 @@ function Landing() {
         <div className='title-logo'>
         <h1>Our Cookbook</h1>
         </div>
-        <ControlledCarousel recipes={recipes} />
+        {/* <ControlledCarousel recipes={recipes} /> */}
     </div>
   )
 }
