@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import ControlledCarousel from "../components/ControlledCarousel"
+import PageTitle from "../components/PageTitle";
+import HomeCarousel from "../components/HomeCarousel";
 import { client } from "../client";
-import "../App.css"
+import "../App.css";
 export default function Landing() {
   const [recipes, setRecipes] = useState([]);
 
@@ -9,27 +10,17 @@ export default function Landing() {
     client
       .getEntries()
       .then((response) => {
-     setRecipes(response.items);
-    
+        setRecipes(response.items);
       })
       .catch((err) => console.error(err));
   }, []);
 
-
   return (
-    <div  className=" d-flex-column justify-content-center">
-      <div >
-      <h1 className="page-title"> <span class="highlight-container"><span class="highlight">Our&nbsp;&nbsp;&nbsp;</span></span>
-     <span class="highlight-container"><span class="highlight">Cookbook&nbsp;</span></span>
-     </h1>
+    <div className=" d-flex-column justify-content-center">
+      <PageTitle first={"Our"} second={`Cookbook`} />
+      <div className="container fluid w-75">
+        <HomeCarousel />
       </div>
-     
-     <div  className="container fluid w-75" >
-      <ControlledCarousel recipes={recipes} />
-     </div>
-     
     </div>
-    
-  )
+  );
 }
-
