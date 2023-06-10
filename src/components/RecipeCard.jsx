@@ -1,8 +1,7 @@
 import '../App.css';
+import {cls} from '../colors';
 import styled from 'styled-components';
-
 export default function RecipeCard({ recipe }) {
-
   return (
     <CardWrap>
       <Img
@@ -31,7 +30,7 @@ const CardWrap = styled.div`
   height: auto;
   margin: 1em;
   min-width: 300px;
-  background: white;
+  background: ${cls.col3};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,10 +58,10 @@ const Img = styled.div`
 `;
 
 const CrdText = styled.div`
+  text-decoration: none;
   width: 100%;
   height: auto;
   /* line-height: 0.8em; */
   border-radius: 0 0 2em 2em;
-  background: rgb(60, 179, 113, 0.9);`;
-
-`
+  background: ${cls.col3};
+  `
