@@ -28,15 +28,15 @@ export default function RecipeView() {
 
 
   return (
-    <div>
-        <h1>{recipe.title}</h1>
-        <h4>{recipe.subtitle}</h4>
-        <div>
+    <div className='recipe-page'>
+        <h1 className='recipe-title'>{recipe.title}</h1>
+        <h4 className='recipe-sub-title'>{recipe.subtitle}</h4>
+        <div className='recipe-facts'>
           <p>Needed time: {recipe.cookingTime}</p>
           <p>Difficulty: {recipe.difficulty}</p>
         </div>
         
-        <div>Ingredients
+        <div className='recipe-ingredients'>Ingredients
             <ul>
                 <li>Ingredient 1</li>
                 <li>Ingredient 2</li>
@@ -44,8 +44,8 @@ export default function RecipeView() {
                 <li>Ingredient 4</li>
             </ul>
         </div>
-        <img src={imageUrl} alt='"Recipe' />
-        <p>Instructions</p>
+        <img className='recipe-img' src={imageUrl} alt='"Recipe' />
+        <p className='recipe-instructions'>Instructions</p>
     </div>
   )
 }
