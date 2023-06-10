@@ -1,8 +1,8 @@
-import "../App.css";
-import styled from "styled-components";
+import '../App.css';
+import styled from 'styled-components';
 
 export default function RecipeCard({ recipe }) {
-   console.log(recipe.fields.thumbnail.fields.file.url);
+  console.log(recipe.fields.thumbnail.fields.file.url);
   return (
     <Card>
       <RecipeImg
@@ -12,13 +12,13 @@ export default function RecipeCard({ recipe }) {
       <CrdText>
         <h4>{recipe.fields.title}</h4>
         <p>
-          Cooking Time: <span> {recipe.fields.cookingTime}</span>{" "}
+          Cooking Time: <span> {recipe.fields.cookingTime}</span>{' '}
         </p>
         <p>
-          Difficulty: <span> {recipe.fields.difficulty} / 5</span>{" "}
+          Difficulty: <span> {recipe.fields.difficulty} / 5</span>{' '}
         </p>
         <p>
-          Rating: <span> noData of 5</span>{" "}
+          Rating: <span> noData of 5</span>{' '}
         </p>
       </CrdText>
     </Card>
@@ -33,6 +33,7 @@ const Card = styled.div`
 `;
 const RecipeImg = styled.img`
   width: 100%;
+  height: 100%;
   border-radius: 2em 2em 0 0;
 `;
 
@@ -41,4 +42,5 @@ const CrdText = styled.div`
   border-radius: 0 0 2em 2em;
   background: white;
   padding: 0 1em;
+  height = 50%;
 `;
