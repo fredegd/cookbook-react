@@ -5,4 +5,3 @@ export const client = createClient({
   environment: import.meta.env.VITE_ENVIRONMENT,
   accessToken: import.meta.env.VITE_ACCESS_TOKEN
 });
-
