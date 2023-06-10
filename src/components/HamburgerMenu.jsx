@@ -15,13 +15,14 @@ export default function HamburgerMenu({show,setShow}) {
 }
 
 const MenuLabel = styled.div`
+
   background-color: #abcdef;
+  z-index:9999;
   right: 3rem;
   border-radius: 50%;
   height: 5rem;
   width: 5rem;
   cursor: default;
-  z-index: 1;
   text-align: center;
   display: block;
   @media screen and (min-width: 770px) {

@@ -1,61 +1,57 @@
 import { useEffect, useState } from "react";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import styled from "styled-components";
 import { client } from "../client";
-import RecipeCard from "../components/RecipeCard";
+import { cls } from "../colors";
 
-import React from "react";
+import RecipeCard from "./RecipeCard";
 
-export default function Lebanese() {
+export default function Selection({keyword}) {
   const [recipes, setRecipes] = useState([]);
-
   useEffect(() => {
     client
       .getEntries({ content_type: "cookbook" })
       .then((response) => {
-        setRecipes(response.items);
+        const selected = response.items.filter((item) => {
+          const tags = item.metadata.tags.map((tag) => tag.sys.id);
+          return tags.includes(keyword);
+        });
+        setRecipes(selected);
       })
       .catch((err) => console.error(err));
   }, []);
+console.log(recipes)
 
-  recipes.map((recip)=>{
-    const tags =recip.metadata.tags
-    
-    tags.map((tag)=>{
-            console.log(tag.sys.id)
-    })
-
-  })
-  //
-  //            THIS IS STILL WORK IN PROGRESS  
-  //THIS IS STILL WORK IN PROGRESS
-  //            THIS IS STILL WORK IN PROGRESS
-  //THIS IS STILL WORK IN PROGRESS
-  //            THIS IS STILL WORK IN PROGRESS
-  //
   return (
     <>
-      <h2>Lebanese</h2>
+      <Title>{keyword}</Title>
       <CardsContainer>
-        <CardGrid>
+        <CardRow>
           {
           recipes.map((recipe) => {
-            // // console.log(recipe.metadata.tags)
             return (
               <div key={recipe.sys.id}>
                 <RecipeCard recipe={recipe} />
               </div>
             );
           })}
-        </CardGrid>{" "}
+        </CardRow>{" "}
       </CardsContainer>
     </>
   );
 }
 
+const Title = styled.h1`
+margin-top: 2em;
+padding: 1em;
+background-image: linear-gradient(90deg, ${cls.col2} 0%, ${cls.col1} 50%, ${cls.col2} 100%);
+color: ${cls.col4};
+text-shadow: 0 5px 5px rgb(0, 0, 0);
+
+`
 const CardsContainer = styled.div`
-  margin-top: 3em;
+  margin-top: 1em;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 
@@ -65,12 +61,10 @@ const CardsContainer = styled.div`
   transition: all 0.9s;
 `;
 
-const CardGrid = styled.div`
-  width: 70%;
-  display: grid;
-  /* gap: 2rem; */
-  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
-  justify-content: center;
+const CardRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
   @media screen and (max-width: 1000px) {
     width: 95%;
   }

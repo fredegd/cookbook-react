@@ -37,11 +37,11 @@ const CardWrap = styled.div`
   transition: all 0.5s;
   border-radius:2em;
   &:hover{
-    margin: 1em 0 ;
+    /* margin: 1em 0 ; */
   }
   &:hover>*{
-    width: 103%;
-  }
+    width: 104%;
+    }
 
   `
 

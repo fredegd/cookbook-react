@@ -18,11 +18,11 @@ export default function Navbar() {
     // this is an <ul> tag
     <>
       <StyledNav>
-        <NavLink to="/">
-          <Logo />
+        <NavLink to="/" style={{zIndex: `9999`}}>
+          <Logo  />
         </NavLink>
         <Wrap>
-        <NavTitle>
+        <NavTitle style={{zIndex: `9999`}}>
           <HighlightContainer>
             <Higlight>{first}&nbsp;&nbsp;&nbsp;</Higlight>
           </HighlightContainer>
@@ -94,7 +94,6 @@ margin: auto;
 width: 8em;
 height: 1.4em;
 border-radius: 1em;
-z-index: -2;
 @media screen and (max-width: 770px) {
 margin-top: 1.2em;
 
@@ -103,8 +102,9 @@ margin-top: 1.2em;
 
 
 const StyledNav = styled.nav`
+ z-index: 9999;
   width: 100%;
-  height: 5em;
+  //height: 5em;
   padding: 1em;
   display: flex;
   justify-content: space-between;
@@ -112,7 +112,6 @@ const StyledNav = styled.nav`
   font-size: 1.5rem;
   position: sticky;
   top: 0;
-  z-index: 20;
   background-color: ${cls.col1};
   @media screen and (max-width: 950px) {
   height: 7em;
@@ -121,20 +120,19 @@ const StyledNav = styled.nav`
 `;
 
 const Menu = styled.ul`
-  margin: 0em 0em;
-  padding: 1em;
+  padding: 1em 0;
   list-style: none;
+  text-decoration: none;
   background: ${cls.col3};
   border-radius: 1.2em;
   font-size: 1rem;
-  font-weight: 600;
-  width: 75%;
+  font-weight: 500;
+  width: 70%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   transition: all 0.3s;
-  z-index: -1;
   @media screen and (max-width: 770px) {
     margin: 0;
     padding-top: 2em;

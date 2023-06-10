@@ -10,7 +10,6 @@ export default  function Logo(){
 }
 
 const LogoContainer = styled.div`
- z-index: 1;
 width: 2.5em;
 height: 2.8em;
 border-radius: 3em;
@@ -18,6 +17,7 @@ display:flex;
 justify-content:center;
 align-items: center;
 background: ${cls.col2};
-flex-grow: 1;
+z-index: 9999;
+
 `
 
