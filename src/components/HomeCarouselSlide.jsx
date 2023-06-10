@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import "./css/homeCarousel.css"
-
 export default function (props) {
   const { id, slideTitle, slideDescription, slideBg } = props;
   return (
@@ -15,14 +13,6 @@ export default function (props) {
   );
 }
 
-
-
-
-// const Carousel = styled.div`
-// position: relative;
-// z-index: 0;
-// `
-
 const SlideWrap = styled.div`
   height: 70vh;
   display: flex;
@@ -32,23 +22,22 @@ const SlideWrap = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-   filter: sepia(10%);
-   transition: filter 0.5s;
-   /* >*{
+  filter: sepia(20%);
+  transition: all 0.5s;
+   >*{
     opacity:1;
-    transform: translateY(55px);
     transition: all 0.4s;
-   } */
+   }
 
-  /* @media (max-width: 760px) and (orientation: landscape) {
-    border: 2px solid red;
+  @media (max-width: 760px) and (orientation: landscape) {
     min-height: auto;
     padding: 70px, 20px;
+
   }
   @media (max-width: 760px) and (orientation: portrait) {
     min-height: 70vh;
     padding: 70px, 20px;
-  } */
+  }
 `;
 
 const TextWrap = styled.div`
