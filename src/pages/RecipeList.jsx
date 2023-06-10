@@ -28,6 +28,7 @@ export default function RecipeList() {
     console.log('Recipe clicked with ID:', recipeId);
   };
   return (
+
     <>
 
       <PageTitle first={"All"} second={`Recipes`} />
