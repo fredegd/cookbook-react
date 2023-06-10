@@ -7,51 +7,63 @@ import HamburgerMenu from "./HamburgerMenu";
 export default function Navbar() {
   const [show, setShow] = useState(false);
   const handleShow = () => {
-      setShow(!show);
-  }
+    setShow(!show);
+  };
 
   return (
     // this is an <ul> tag
     <>
-      <StyledNav>
+      <StyledNav className="navbar">
         <NavLink to="/">
           <Logo />
         </NavLink>
         <NavTitle>
-         
-        <span className="highlight-container"><span className="highlight">Our&nbsp;&nbsp;&nbsp;</span></span>
-     <span className="highlight-container"><span className="highlight">Cookbook&nbsp;</span></span>
+          <span className="highlight-container">
+            <span className="highlight">Our&nbsp;&nbsp;&nbsp;</span>
+          </span>
+          <span className="highlight-container">
+            <span className="highlight">Cookbook&nbsp;</span>
+          </span>
         </NavTitle>
-        <HamburgerMenu onClick={handleShow} show={show} setShow={setShow}/>
+        <HamburgerMenu onClick={handleShow} show={show} setShow={setShow} />
 
         <Menu show={show}>
-          <MenuItem to="/" onClick={handleShow}>Home</MenuItem>
-          <MenuItem to="/recipes" onClick={handleShow}>Recipes</MenuItem>
-          <MenuItem to="/categories" onClick={handleShow}>Categories</MenuItem>
-          <MenuItem to="/about" onClick={handleShow}>About</MenuItem>
-          <MenuItem to="/contact" onClick={handleShow}>Contact</MenuItem>
+          <MenuItem to="/" onClick={handleShow}>
+            Home
+          </MenuItem>
+          <MenuItem to="/recipes" onClick={handleShow}>
+            Recipes
+          </MenuItem>
+          <MenuItem to="/categories" onClick={handleShow}>
+            Categories
+          </MenuItem>
+          <MenuItem to="/about" onClick={handleShow}>
+            About
+          </MenuItem>
+          <MenuItem to="/contact" onClick={handleShow}>
+            Contact
+          </MenuItem>
         </Menu>
-
       </StyledNav>
     </>
   );
 }
 
-
 const NavTitle = styled.div`
-font-family: 'Playfair Display SC', serif; font-size: 3em;
-visibility: hidden;
-display: none;
-transition: all 0.3s;
-@media screen and (max-width: 700px) {
-  margin-left: -3em;
-  margin-top: 3em;
+  font-family: "Playfair Display SC", serif;
+  font-size: 3em;
+  visibility: hidden;
+  display: none;
+  transition: all 0.3s;
+  @media screen and (max-width: 700px) {
+    margin-left: -3em;
+    margin-top: 3em;
 
-   display:block;
-   visibility: visible;
+    display: block;
+    visibility: visible;
     font-size: 0.8em;
   }
-`
+`;
 
 const StyledNav = styled.nav`
   width: 100%;
@@ -64,7 +76,9 @@ const StyledNav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 20;
-  background-color:  #ffd500;
+  //background-color: #ffd500;
+  // background-image: url(./images/islamic-new-year-pattern-background.jpg);
+  // background-size: 300px;
 `;
 
 const Menu = styled.ul`
@@ -79,7 +93,7 @@ const Menu = styled.ul`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   transition: all 0.3s;
   @media screen and (max-width: 700px) {
     margin: 0;
@@ -90,12 +104,12 @@ const Menu = styled.ul`
     width: 100%;
     height: 800px;
     position: absolute;
-    top:7.5em;
+    top: 7.5em;
     left: ${(props) => (props.show ? "0" : "-110%")};
     opacity: 1;
   }
   .active {
-    color:  #ffd500;
+    color: #ffd500;
     font-weight: bold;
   }
 `;
@@ -107,7 +121,7 @@ const MenuItem = styled(NavLink)`
   color: black;
   padding: 0.5em;
   @media screen and (max-width: 700px) {
-   margin: 2em;
+    margin: 2em;
   }
 
   &:after {
@@ -120,7 +134,6 @@ const MenuItem = styled(NavLink)`
   }
   &:hover:after {
     width: 100%;
-    background:  #ffd500;
-    
+    background: #ffd500;
   }
 `;
