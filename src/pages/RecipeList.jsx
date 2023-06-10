@@ -23,10 +23,10 @@ export default function RecipeList() {
       .catch((err) => console.error(err));
   }, []);
 
-  const handleRecipeClick = (recipeId) => {
-    id = recipeId;
-    console.log('Recipe clicked with ID:', recipeId);
-  };
+  // const handleRecipeClick = (recipeId) => {
+  //   id = recipeId;
+  //   console.log('Recipe clicked with ID:', recipeId);
+  // };
   return (
 
     <>

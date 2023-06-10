@@ -16,7 +16,7 @@ export default function HamburgerMenu({show,setShow}) {
 
 const MenuLabel = styled.div`
 
-  background-color: #abcdef;
+  background-color: ${cls.col2};
   z-index:9999;
   right: 3rem;
   border-radius: 50%;

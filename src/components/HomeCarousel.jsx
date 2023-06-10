@@ -67,7 +67,6 @@ export default function HomeCarousel() {
       >
         {carouselSlides.map((item) => {
           const { id, slideBg, slideTitle, slideDescription } = item;
-          // console.log(item,"hihi")
           return (
             <SwiperSlide key={id}>
               <HomeCarouselSlide

@@ -67,7 +67,6 @@ const NavTitle = styled.div`
   display: none;
   transition: all 0.3s;
   @media screen and (max-width: 770px) {
-    border: 2px solidred;
     display: block;
     visibility: visible;
     font-size: 0.9em;
@@ -149,7 +148,7 @@ const Menu = styled.ul`
     opacity: 1;
   }
   .active {
-    color: ${cls.col1};
+    color: ${cls.col6};
     font-weight: bold;
   }
 `;
@@ -174,7 +173,7 @@ const MenuItem = styled(NavLink)`
   }
   &:hover:after {
     width: 100%;
-    background: ${cls.col1};
+    background: ${cls.col6};
   }
 `;
 
@@ -187,22 +186,23 @@ const HighlightContainer = styled.span`
     height: 2em;
     width: 130%;
     position: absolute;
-    background: ${cls.col1};
     background-image: linear-gradient(
       135deg,
       ${cls.col1} 0%,
-      ${cls.col1} 50%,
+      ${cls.col5} 50%,
       ${cls.col2} 100%
     );
     transform: rotate(-2deg);
     top: -0.3em;
     left: -0.5em;
+    border: 2px solid ${cls.col1 } ;
+
     border-radius: 28% 25% 20% 24%;
     @media screen and (max-width: 770px) {
       background-image: linear-gradient(
         135deg,
         ${cls.col1} 0%,
-        ${cls.col2} 40%,
+        ${cls.col2} 70%,
         ${cls.col2} 100%
       );
     }

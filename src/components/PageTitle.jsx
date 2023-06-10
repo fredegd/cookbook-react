@@ -45,6 +45,8 @@ const HighlightContainer = styled.span`
   top: -0.3em;
   left: -0.5em;
   border-radius: 28% 25% 20% 24%;
+  border-top:4px solid ${cls.col6};
+  border-left: 6px solid ${cls.col6};
   @media screen and (max-width: 770px) {
     background-image: linear-gradient(135deg, ${cls.col1} 0%,${cls.col2} 40%, ${cls.col2} 100%);
   }

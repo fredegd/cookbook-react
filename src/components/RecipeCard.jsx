@@ -28,7 +28,7 @@ export default function RecipeCard({ recipe }) {
 
 const CardWrap = styled.div`
   height: auto;
-  margin: 1em;
+  margin: 0 1em;
   min-width: 300px;
   background: ${cls.col3};
   display: flex;
@@ -54,6 +54,8 @@ const Img = styled.div`
   background-position: center;
   background-size: cover;
   border-radius:2em 2em 0 0 ;
+  border-top:4px solid ${cls.col6};
+  border-left: 6px solid ${cls.col6};
 
 `;
 
@@ -63,5 +65,7 @@ const CrdText = styled.div`
   height: auto;
   /* line-height: 0.8em; */
   border-radius: 0 0 2em 2em;
+  border-top:2px solid ${cls.col6};
+  border-left: 6px solid ${cls.col6};
   background: ${cls.col3};
   `
