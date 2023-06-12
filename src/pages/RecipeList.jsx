@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { client } from '../client';
@@ -9,6 +8,7 @@ import RecipeCard from '../components/RecipeCard';
 
 export default function RecipeList() {
   const [recipes, setRecipes] = useState([]);
+  const [searchKeyword, setSearchKeyword] = useState("");
   let { id } = useParams();
 
   useEffect(() => {
@@ -17,37 +17,63 @@ export default function RecipeList() {
         content_type: 'cookbook',
       })
       .then((response) => {
-        console.log(response.items, 'hurra :)');
         setRecipes(response.items);
       })
       .catch((err) => console.error(err));
   }, []);
 
-  const handleRecipeClick = (recipeId) => {
-    id = recipeId;
-    console.log('Recipe clicked with ID:', recipeId);
+  const handleSearchChange = (e) => {
+    setSearchKeyword(e.target.value);
   };
+
+  const filteredRecipes = recipes.filter((recipe) =>
+    recipe.fields.title.toLowerCase().includes(searchKeyword.toLowerCase())
+  );
+
   return (
-
     <>
-
       <PageTitle first={"All"} second={`Recipes`} />
-       <CardsContainer>
+      
+      <SearchContainer>
+        <SearchForm onSubmit={(e) => e.preventDefault()}>
+          <SearchInput
+            type="text"
+            placeholder="Search recipe..."
+            value={searchKeyword}
+            onChange={handleSearchChange}
+          />
+        </SearchForm>
+      </SearchContainer>
+
+      <CardsContainer>
         <CardGrid>
-          {recipes.map((recipe) => {
-            return (
-              <Linked key={recipe.sys.id}  to={`/recipes/${recipe.sys.id}`}>
-                <RecipeCard recipe={recipe} />
-              </Linked>
-            );
-          })}
+          {filteredRecipes.map((recipe) => (
+            <Linked key={recipe.sys.id} to={`/recipes/${recipe.sys.id}`}>
+              <RecipeCard recipe={recipe} />
+            </Linked>
+          ))}
         </CardGrid>
       </CardsContainer>
-      
     </>
   );
 }
 
+const SearchContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1em;
+`;
+
+const SearchForm = styled.form`
+  display: flex;
+`;
+
+const SearchInput = styled.input`
+  width: 200px;
+  padding: 0.5em;
+  border-radius: 4px;
+  border: 1px solid ${cls.col6};
+`;
 
 const CardsContainer = styled.div`
   margin-top: 3em;
@@ -75,6 +101,6 @@ const CardGrid = styled.div`
 `;
 
 const Linked = styled(Link)`
-text-decoration: none;
-color: ${cls.col4};;
-`
+  text-decoration: none;
+  color: ${cls.col4};
+`;

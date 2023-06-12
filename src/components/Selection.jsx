@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { client } from "../client";
 import { cls } from "../colors";
+import { Link } from 'react-router-dom';
 
 import RecipeCard from "./RecipeCard";
 
-export default function Selection({keyword}) {
+export default function Selection({ keyword }) {
   const [recipes, setRecipes] = useState([]);
+
   useEffect(() => {
     client
       .getEntries({ content_type: "cookbook" })
@@ -18,43 +20,41 @@ export default function Selection({keyword}) {
         setRecipes(selected);
       })
       .catch((err) => console.error(err));
-  }, []);
-console.log(recipes)
+  }, [keyword]);
 
   return (
     <>
       <Title>{keyword}</Title>
       <CardsContainer>
         <CardRow>
-          {
-          recipes.map((recipe) => {
-            return (
-              <div key={recipe.sys.id}>
-                <RecipeCard recipe={recipe} />
-              </div>
-            );
-          })}
-        </CardRow>{" "}
+          {recipes.map((recipe) => (
+            <Linked key={recipe.sys.id} to={`/recipes/${recipe.sys.id}`}>
+              <RecipeCard recipe={recipe} />
+            </Linked>
+          ))}
+        </CardRow>
       </CardsContainer>
     </>
   );
 }
 
-const Title = styled.h1`
-margin-top: 2em;
-padding: 1em;
-background-image: linear-gradient(90deg, ${cls.col2} 0%, ${cls.col1} 50%, ${cls.col2} 100%);
-color: ${cls.col4};
-text-shadow: 0 5px 5px rgb(0, 0, 0);
+// Remaining styled components...
 
-`
+const Title = styled.h1`
+  margin-top: 2em;
+  padding: 1em;
+  border-top: 6px solid ${cls.col6};
+  background-image: linear-gradient(90deg, ${cls.col6} 0%, ${cls.col1} 20%, ${cls.col2} 100%);
+  color: ${cls.col4};
+  text-shadow: 0 5px 5px rgb(0, 0, 0);
+`;
+
 const CardsContainer = styled.div`
   margin-top: 1em;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -68,4 +68,9 @@ const CardRow = styled.div`
   @media screen and (max-width: 1000px) {
     width: 95%;
   }
+`;
+
+const Linked = styled(Link)`
+  text-decoration: none;
+  color: ${cls.col4};
 `;
