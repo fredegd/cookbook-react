@@ -18,6 +18,10 @@ justify-content:center;
 align-items: center;
 background: ${cls.col2};
 z-index: 9999;
+transition: rotate 1s;
+&:hover{
+  rotate: 360deg;
+}
 
 `
 

@@ -1,9 +1,44 @@
-* {
-  margin: 0px;
-  padding: 0px;
-}
+
+
 #root {
-  /*--s: 20px; /* control the size 
+
+  
+    --s: 500px; /* control the size */
+    --c1: #ffd500;
+    --c2: #cdefff;
+    --c3: #4488dd;
+    --c4: #ff77aa;
+    
+    --_g: calc(2.9*var(--s)) calc(2.5*var(--s)) 
+      radial-gradient(45% 25%,var(--c1) 60%,#0000 101%);
+    background:
+      0 var(--s)/var(--_g), var(--s) 0/var(--_g),
+      radial-gradient(50% 50%,var(--c2) 60%,var(--c3))
+       calc(var(--s)/2) calc(var(--s)/2)/var(--s) var(--s),
+      linear-gradient(60deg,var(--c1) 10%, var(--c2) 50%) 
+       0 0/calc(2*var(--s));
+  
+
+
+  /*
+    --s: 40px;  control the size 
+    --c1: #ffd500;
+    --c2: #abcdef;
+    
+    background:
+      conic-gradient(at 50% 25%,var(--c2) 25%,#0000 0)
+       calc(var(--s)/-4) calc(var(--s)/-2),
+      conic-gradient(at 25% 25%,var(--c1) 25%,#0000 0 75%,var(--c2) 0)
+       calc(var(--s)/4) calc(var(--s)/-4),
+      conic-gradient(from -90deg at 75% 25%,var(--c2) 75%,var(--c1) 0);
+    background-size: var(--s) var(--s);
+  
+  
+  */
+
+  
+    /* --s: 20px; 
+
     --c1: #c7956d;
     --c2: #5e4352;
     
@@ -17,7 +52,9 @@
       calc(8*var(--s)) calc(8*var(--s)) var(--g),
       calc(3*var(--s)) calc(3*var(--s)) var(--g),
       linear-gradient( 45deg,var(--c)) 0 0/var(--d),
+
       linear-gradient(-45deg,var(--c)) 0 0/var(--d) var(--c2);*/
+
 
   /* background-color: #abcdef; */
   margin: 0;
