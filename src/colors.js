@@ -1,6 +1,6 @@
 export const cls = {
-    "col1": "#ffd500",
-    "col2": "#bcdeff",
+    "col1": "#e9e3cb",
+    "col2": "#e9e3cb",
    "col3": "#bcdeff",
     "col4": "#000000",
     "col5": "#f1f1f1",
