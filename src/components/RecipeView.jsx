@@ -10,6 +10,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 export default function RecipeView() {
   const [recipe, setRecipe] = useState(null);
+  const [recipeImgs, setRecipeImgs] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -18,6 +19,8 @@ export default function RecipeView() {
       .then((response) => {
         console.log(response.fields, "testtt");
         setRecipe(response.fields);
+        console.log(response.fields.images)
+        setRecipeImgs(response.fields.images)
       })
       .catch((err) => console.log(err));
   }, []);
@@ -30,9 +33,7 @@ export default function RecipeView() {
     ? recipe.thumbnail.fields.file.url
     : `http:${recipe.thumbnail.fields.file.url}`;
 
-  // const imageUrl2 = recipe.images.fields.file.url.startsWith("http:")
-  //   ? recipe.images.fields.file.url
-  //   : `http:${recipe.images.fields.file.url}`;
+
 
   const options = {
     renderNode: {
@@ -67,10 +68,13 @@ export default function RecipeView() {
         {renderRichText(recipe.instructions)}
       </div>
       <Carousel>
-        {recipe.images?.map((image, index) => (
-          <div key={index}>
-            <img src={image.url} alt={`Image ${index}`} />
-          </div>
+      {/* recipeImgs.includes("")&& */}
+        { recipeImgs.map((image, index) => (
+          <img src={`http:${image.fields.file.url}`}alt="" />
+// console.log("https:"+image.fields.file.url)
+          // <div key={index}>
+          //   <img src={image.url} alt={`Image ${index}`} />
+          // </div>
         ))}
       </Carousel>
     </div>
