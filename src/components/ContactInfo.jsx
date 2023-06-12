@@ -6,61 +6,55 @@ import {
   BsTelephoneFill,
   BsGlobeCentralSouthAsia,
 } from 'react-icons/bs';
+import './css/contactInfo.css';
 
 function ContactInfo() {
+  const iconSize = 28;
   return (
-    <Container>
+    <Container className='contactInfo-container text-start p-5 fa-lg'>
       <Row>
-        <h2>Contact us</h2>
+        <h2 className=''>Contact us</h2>
       </Row>
-      <Row>
-        <p>We're open for any suggestion or just to have a chat</p>
+      <Row className='pt-5 pb-3'>
+        We're open for any suggestion or just to have a chat
       </Row>
-      <Row>
-        <Col xs={1}>
-          <BsFillGeoAltFill />
+      <Row className=''>
+        <Col className='center-icon' style={{ padding: 0 }} xs={2}>
+          <BsFillGeoAltFill size={iconSize} />
         </Col>
         <Col>
-          <p>
-            <span>Adress:</span>
-            Hauptstrasse 22 12345 Oberhausen
-          </p>
+          <span>Adress: </span>
+          Hauptstrasse 22 12345 Oberhausen
         </Col>
       </Row>
 
-      <Row>
-        <Col xs={1}>
-          <BsTelephoneFill />
+      <Row className='pt-5'>
+        <Col className='center-icon' style={{ padding: 0 }} xs={2}>
+          <BsTelephoneFill size={iconSize} />
         </Col>
         <Col>
-          <p>
-            <span>Phone:</span>
-            +49 171 8473938
-          </p>
+          <span>Phone: </span>
+          +49 171 8473938
         </Col>
       </Row>
 
-      <Row>
-        <Col xs={1}>
-          <BsFillSendFill />
+      <Row className='pt-5 flex-nowrap'>
+        <Col className='center-icon' style={{ padding: 0 }} xs={2}>
+          <BsFillSendFill size={iconSize} />
         </Col>
         <Col>
-          <p>
-            <span>Email:</span>
-            info@cookbook.com
-          </p>
+          <span>Email: </span>
+          info@cookbook.com
         </Col>
       </Row>
 
-      <Row>
-        <Col xs={1}>
-          <BsGlobeCentralSouthAsia />
+      <Row className='pt-5'>
+        <Col className='center-icon' style={{ padding: 0 }} xs={2}>
+          <BsGlobeCentralSouthAsia size={iconSize} />
         </Col>
         <Col>
-          <p>
-            <span>Website:</span>
-            cookbook.com
-          </p>
+          <span>Website: </span>
+          cookbook.com
         </Col>
       </Row>
     </Container>

@@ -1,0 +1,23 @@
+.contactInfo-container {
+  /* border: 2px green solid; */
+  height: 100%;
+  box-shadow: 0em 0 1em yellow;
+}
+
+.center-icon {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+p {
+  text-align: start;
+  margin-bottom: 0;
+  padding: auto;
+}
+
+svg {
+  display: block;
+  /* width: 50%; */
+  height: auto;
+}

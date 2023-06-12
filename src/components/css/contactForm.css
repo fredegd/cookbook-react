@@ -1,0 +1,39 @@
+.contactForm {
+  background-color: yellow;
+  box-shadow: 0em 0 1em yellow;
+  height: 100%;
+}
+
+.contactForm input {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid green;
+}
+
+.contactForm textarea {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid green;
+}
+
+.contactForm input:focus {
+  background-color: transparent;
+  /* border: none; */
+  box-shadow: none;
+}
+
+.contactForm button {
+  background-color: mediumseagreen;
+  /* font-size: large; */
+  font-weight: 500;
+  text-transform: uppercase;
+  color: black;
+  border: none;
+}
+
+.contactForm button:hover {
+  color: yellow;
+  background-color: mediumseagreen;
+}
