@@ -22,7 +22,7 @@ export default function Navbar() {
           <Logo  />
         </NavLink>
         <Wrap>
-        <NavTitle style={{zIndex: `9999`}}>
+        <NavTitle >
           <HighlightContainer>
             <Higlight>{first}&nbsp;&nbsp;&nbsp;</Higlight>
           </HighlightContainer>
@@ -51,7 +51,7 @@ export default function Navbar() {
           </MenuItem>
         </Menu>
 
-        <Searchbar type="text" placeholder="search recipe..." />
+        {/* <Searchbar type="text" placeholder="search recipe..." /> */}
         </Wrap>
 
         <HamburgerMenu onClick={handleShow} show={show} setShow={setShow} />
@@ -133,12 +133,12 @@ const Menu = styled.ul`
   justify-content: space-around;
   transition: all 0.3s;
   @media screen and (max-width: 770px) {
-    margin: 0;
+    margin:0;
     padding-top: 2em;
     border-radius: 0;
     font-size: 2rem;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-around;
     width: 100%;
     height: 100vh;
     position: absolute;
@@ -155,7 +155,6 @@ const Menu = styled.ul`
 
 const MenuItem = styled(NavLink)`
   text-decoration: none;
-  padding: 0.2em;
   height: 100%;
   color: ${cls.col4};
   padding: 0.5em;
