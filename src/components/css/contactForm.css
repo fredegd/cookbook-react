@@ -1,6 +1,6 @@
 .contactForm {
-  background-color: yellow;
-  box-shadow: 0em 0 1em yellow;
+  background-color: #e9e3cb;
+  box-shadow: 0em 0 1em #bcdeff;
   height: 100%;
 }
 
@@ -8,14 +8,14 @@
   background-color: transparent;
   border: none;
   border-radius: 0;
-  border-bottom: 2px solid green;
+  border-bottom: 2px solid #bcdeff;
 }
 
 .contactForm textarea {
   background-color: transparent;
   border: none;
   border-radius: 0;
-  border-bottom: 2px solid green;
+  border-bottom: 2px solid #bcdeff;
 }
 
 .contactForm input:focus {
@@ -25,7 +25,7 @@
 }
 
 .contactForm button {
-  background-color: mediumseagreen;
+  background-color: #bcdeff;
   /* font-size: large; */
   font-weight: 500;
   text-transform: uppercase;
@@ -34,6 +34,20 @@
 }
 
 .contactForm button:hover {
-  color: yellow;
-  background-color: mediumseagreen;
+  color: #4488dd;
+  background-color: #bcdeff;
+}
+
+.contactForm button:after {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 0;
+  background: transparent;
+  transition: width 0.7s ease;
+}
+
+.contactForm button:hover:after {
+  width: 100%;
+  background: #4488dd;
 }

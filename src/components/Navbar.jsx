@@ -1,68 +1,67 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
-import { cls } from "../colors";
-import "./css/navbar.css";
-import Logo from "./Logo";
-import HamburgerMenu from "./HamburgerMenu";
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+import { cls } from '../colors';
+import './css/navbar.css';
+import Logo from './Logo';
+import HamburgerMenu from './HamburgerMenu';
 export default function Navbar() {
   const [show, setShow] = useState(false);
   const handleShow = () => {
     setShow(!show);
   };
 
-  const first = "our";
-  const second = "Cookbook";
+  const first = 'our';
+  const second = 'Cookbook';
 
   return (
     // this is an <ul> tag
     <>
       <StyledNav>
-        <NavLink to="/" style={{zIndex: `9999`}}>
-          <Logo  />
+        <NavLink to='/' style={{ zIndex: `9999` }}>
+          <Logo />
         </NavLink>
         <Wrap>
-        <NavTitle >
-          <HighlightContainer>
-            <Higlight>{first}&nbsp;&nbsp;&nbsp;</Higlight>
-          </HighlightContainer>
-          {second && (
+          <NavTitle>
             <HighlightContainer>
-              <Higlight>{second}&nbsp;</Higlight>
+              <Higlight>{first}&nbsp;&nbsp;&nbsp;</Higlight>
             </HighlightContainer>
-          )}
-        </NavTitle>
+            {second && (
+              <HighlightContainer>
+                <Higlight>{second}&nbsp;</Higlight>
+              </HighlightContainer>
+            )}
+          </NavTitle>
 
-        <Menu show={show}>
-          <MenuItem to="/" onClick={handleShow}>
-            Home
-          </MenuItem>
-          <MenuItem to="/recipes" onClick={handleShow}>
-            Recipes
-          </MenuItem>
-          <MenuItem to="/categories" onClick={handleShow}>
-            Categories
-          </MenuItem>
-          <MenuItem to="/about" onClick={handleShow}>
-            About
-          </MenuItem>
-          <MenuItem to="/contact" onClick={handleShow}>
-            Contact
-          </MenuItem>
-        </Menu>
+          <Menu show={show}>
+            <MenuItem to='/' onClick={handleShow}>
+              Home
+            </MenuItem>
+            <MenuItem to='/recipes' onClick={handleShow}>
+              Recipes
+            </MenuItem>
+            <MenuItem to='/categories' onClick={handleShow}>
+              Categories
+            </MenuItem>
+            <MenuItem to='/about' onClick={handleShow}>
+              About
+            </MenuItem>
+            <MenuItem to='/contact' onClick={handleShow}>
+              Contact
+            </MenuItem>
+          </Menu>
 
-        {/* <Searchbar type="text" placeholder="search recipe..." /> */}
+          {/* <Searchbar type="text" placeholder="search recipe..." /> */}
         </Wrap>
 
         <HamburgerMenu onClick={handleShow} show={show} setShow={setShow} />
-
       </StyledNav>
     </>
   );
 }
 
 const NavTitle = styled.div`
-  font-family: "Playfair Display SC", serif;
+  font-family: 'Playfair Display SC', serif;
   font-size: 3em;
 
   display: none;
@@ -75,34 +74,30 @@ const NavTitle = styled.div`
 `;
 
 const Wrap = styled.div`
-width: 90%;
-display: flex;
-flex-direction: row;
-align-items: center;
-@media screen and (max-width: 770px) {
-width: auto;
-flex-direction: column;
-align-items: center;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @media screen and (max-width: 770px) {
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 
-
-}
-`
-
-const Searchbar= styled.input`
-margin: auto;
-/* margin-top: 0.5em; */
-width: 8em;
-height: 1.4em;
-border-radius: 1em;
-@media screen and (max-width: 770px) {
-margin-top: 1.2em;
-
-}
-`
-
+const Searchbar = styled.input`
+  margin: auto;
+  /* margin-top: 0.5em; */
+  width: 8em;
+  height: 1.4em;
+  border-radius: 1em;
+  @media screen and (max-width: 770px) {
+    margin-top: 1.2em;
+  }
+`;
 
 const StyledNav = styled.nav`
- z-index: 9999;
+  z-index: 9999;
   width: 100%;
   //height: 5em;
   padding: 1em;
@@ -115,13 +110,12 @@ const StyledNav = styled.nav`
 
   background-color: ${cls.col1};
   @media screen and (max-width: 950px) {
-  height: 7em;
-
+    height: 7em;
   }
 `;
 
 const Menu = styled.ul`
-  padding: 1em 0;
+  padding: 0.5em 0;
   list-style: none;
   text-decoration: none;
   background: ${cls.col3};
@@ -135,7 +129,7 @@ const Menu = styled.ul`
   justify-content: space-around;
   transition: all 0.3s;
   @media screen and (max-width: 770px) {
-    margin:0;
+    margin: 0;
     padding-top: 2em;
     border-radius: 0;
     font-size: 2rem;
@@ -147,7 +141,7 @@ const Menu = styled.ul`
 
     top: 0;
     /* top: 10.5em; */
-    left: ${(props) => (props.show ? "0" : "-110%")};
+    left: ${(props) => (props.show ? '0' : '-110%')};
     opacity: 1;
   }
   .active {
@@ -166,7 +160,7 @@ const MenuItem = styled(NavLink)`
   }
 
   &:after {
-    content: "";
+    content: '';
     display: block;
     height: 5px;
     width: 0;
@@ -183,7 +177,7 @@ const HighlightContainer = styled.span`
   position: relative;
   display: inline-block;
   &:before {
-    content: "";
+    content: '';
     display: flex;
     height: 2em;
     width: 130%;
@@ -197,7 +191,7 @@ const HighlightContainer = styled.span`
     transform: rotate(-2deg);
     top: -0.3em;
     left: -0.5em;
-    border: 2px solid ${cls.col1 } ;
+    border: 2px solid ${cls.col1};
 
     border-radius: 28% 25% 20% 24%;
     @media screen and (max-width: 770px) {

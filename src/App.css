@@ -1,15 +1,10 @@
-
 * {
   margin: 0px;
   padding: 0px;
 }
+
 #root {
-   
-  
-    background-color: #585856;
-  
-  
-  
+  background-color: #585856;
   /*  
     --c1: #ffd500;
     --c2: #cdefff;
@@ -53,28 +48,30 @@
   padding: 0;
   text-align: center;
   color: black;
-
-  height: auto;
+  min-height: 100vh;
+  overflow: scroll;
   font-family: "Montserrat Alternates", sans-serif;
   /* background-image: url(./components/images/islamic-new-year-pattern-background.jpg);
   background-size: 300px; */
 }
 
 /* ////////////////////////////   Recipe-View   /////////////////////////////// */
-
 .recipe-view-container {
   background-color: rgba(243, 222, 129, 0.201);
   background-size: cover;
 }
-.recipe-title{
+
+.recipe-title {
   padding-top: 20px;
   margin-bottom: 20px;
 }
+
 .recipe-sub-title {
   font-size: 15px;
   padding: 0px 50px 0px;
 }
-.recipe-middle{
+
+.recipe-middle {
   display: flex;
   flex-wrap: wrap;
   padding: 0px 0px 0px;
@@ -82,35 +79,42 @@
   gap: 40px;
   margin-bottom: 40px;
 }
-.recipe-facts{
+
+.recipe-facts {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
 }
-.recipe-facts h4{
+
+.recipe-facts h4 {
   font-size: 12px;
   margin: 0px;
 }
-.recipe-ingredients{
+
+.recipe-ingredients {
   padding: 0px 0px 0px;
 }
-.recipe-img{
+
+.recipe-img {
   max-width: 650px;
   border-radius: 10px;
 }
-.recipe-instructions{
+
+.recipe-instructions {
   margin-bottom: 40px;
 }
-.recipe-instructions ul{
+
+.recipe-instructions ul {
   list-style: none;
 }
-.recipe-instructions p{
+
+.recipe-instructions p {
   margin-bottom: 5px;
 }
-/* ////////////////////////////   end: Recipe-View   /////////////////////////////// */
 
-.navbar{
+/* ////////////////////////////   end: Recipe-View   /////////////////////////////// */
+.navbar {
   /* control the size */
   /* --s: 15px; 
   
@@ -123,13 +127,9 @@
     #476074;
   background-size: calc(2*var(--s)) calc(2*var(--s));
    */
-background-image: url(./components/images/islamic-new-year-pattern-background.jpg);
+  background-image: url(./components/images/islamic-new-year-pattern-background.jpg);
   background-size: 300px;
 }
-
-  
-  
-  
 
 .page-title {
   margin: 1em;
@@ -142,9 +142,11 @@ background-image: url(./components/images/islamic-new-year-pattern-background.jp
 .highlight {
   position: relative;
 }
+
 .highlight-container {
   display: inline-block;
 }
+
 .highlight-container:before {
   content: "";
   display: flex;
@@ -152,12 +154,10 @@ background-image: url(./components/images/islamic-new-year-pattern-background.jp
   width: 130%;
   position: absolute;
   background: #ffd500;
-  background-image: linear-gradient(
-    135deg,
-    #ffd500 0%,
-    #ffd500 50%,
-    #abcdef 100%
-  );
+  background-image: linear-gradient(135deg,
+      #ffd500 0%,
+      #ffd500 50%,
+      #abcdef 100%);
   transform: rotate(-2deg);
   top: -0.3em;
   left: -0.5em;
@@ -166,17 +166,14 @@ background-image: url(./components/images/islamic-new-year-pattern-background.jp
 
 @media screen and (max-width: 700px) {
   .highlight-container:before {
-    background-image: linear-gradient(
-      135deg,
-      #ffd500 0%,
-      #abcdef 40%,
-      #abcdef 100%
-    );
+    background-image: linear-gradient(135deg,
+        #ffd500 0%,
+        #abcdef 40%,
+        #abcdef 100%);
   }
+
   .page-title {
     font-size: 1em;
     opacity: 0;
   }
 }
-
-
