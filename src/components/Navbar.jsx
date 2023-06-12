@@ -1,92 +1,170 @@
-import styled, { StyleSheetManager } from "styled-components";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import styled from "styled-components";
+import { cls } from "../colors";
 import "./css/navbar.css";
 import Logo from "./Logo";
 import HamburgerMenu from "./HamburgerMenu";
 export default function Navbar() {
   const [show, setShow] = useState(false);
   const handleShow = () => {
-      setShow(!show);
-      console.log(show)
-  }
+    setShow(!show);
+  };
+
+  const first = "our";
+  const second = "Cookbook";
 
   return (
     // this is an <ul> tag
     <>
       <StyledNav>
-        <NavLink to="/">
-          <Logo />
+        <NavLink to="/" style={{zIndex: `9999`}}>
+          <Logo  />
         </NavLink>
-
-        <HamburgerMenu onClick={handleShow} show={show} setShow={setShow}/>
+        <Wrap>
+        <NavTitle >
+          <HighlightContainer>
+            <Higlight>{first}&nbsp;&nbsp;&nbsp;</Higlight>
+          </HighlightContainer>
+          {second && (
+            <HighlightContainer>
+              <Higlight>{second}&nbsp;</Higlight>
+            </HighlightContainer>
+          )}
+        </NavTitle>
 
         <Menu show={show}>
-          <MenuItem to="/" onClick={handleShow}>Home</MenuItem>
-          <MenuItem to="/recipes" onClick={handleShow}>Recipes</MenuItem>
-          <MenuItem to="/categories" onClick={handleShow}>Categories</MenuItem>
-          <MenuItem to="/about" onClick={handleShow}>About</MenuItem>
-          <MenuItem to="/contact" onClick={handleShow}>Contact</MenuItem>
+          <MenuItem to="/" onClick={handleShow}>
+            Home
+          </MenuItem>
+          <MenuItem to="/recipes" onClick={handleShow}>
+            Recipes
+          </MenuItem>
+          <MenuItem to="/categories" onClick={handleShow}>
+            Categories
+          </MenuItem>
+          <MenuItem to="/about" onClick={handleShow}>
+            About
+          </MenuItem>
+          <MenuItem to="/contact" onClick={handleShow}>
+            Contact
+          </MenuItem>
         </Menu>
+
+        {/* <Searchbar type="text" placeholder="search recipe..." /> */}
+        </Wrap>
+
+        <HamburgerMenu onClick={handleShow} show={show} setShow={setShow} />
 
       </StyledNav>
     </>
   );
 }
 
+const NavTitle = styled.div`
+  font-family: "Playfair Display SC", serif;
+  font-size: 3em;
+
+  display: none;
+  transition: all 0.3s;
+  @media screen and (max-width: 770px) {
+    display: block;
+    visibility: visible;
+    font-size: 0.9em;
+  }
+`;
+
+const Wrap = styled.div`
+width: 90%;
+display: flex;
+flex-direction: row;
+align-items: center;
+@media screen and (max-width: 770px) {
+width: auto;
+flex-direction: column;
+align-items: center;
+
+
+}
+`
+
+const Searchbar= styled.input`
+margin: auto;
+/* margin-top: 0.5em; */
+width: 8em;
+height: 1.4em;
+border-radius: 1em;
+@media screen and (max-width: 770px) {
+margin-top: 1.2em;
+
+}
+`
+
+
 const StyledNav = styled.nav`
+ z-index: 9999;
   width: 100%;
-  height: 7em;
-  padding: 0;
+  //height: 5em;
+  padding: 1em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 1.5rem;
   position: sticky;
   top: 0;
-  z-index: 20;
-  background-color: yellow;
+
+  background-color: ${cls.col1};
+  @media screen and (max-width: 950px) {
+  height: 7em;
+
+  }
 `;
 
 const Menu = styled.ul`
-  margin: 0em 1em;
-  padding: 1em;
+  padding: 1em 0;
   list-style: none;
-  background: mediumseagreen;
+  text-decoration: none;
+  background: ${cls.col3};
   border-radius: 1.2em;
   font-size: 1rem;
-  width: 75%;
+  font-weight: 500;
+  width: 70%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   transition: all 0.3s;
-  @media screen and (max-width: 700px) {
-    margin: 0;
-    padding: 0;
+  @media screen and (max-width: 770px) {
+    margin:0;
+    padding-top: 2em;
     border-radius: 0;
+    font-size: 2rem;
     flex-direction: column;
+    justify-content: space-around;
     width: 100%;
+    height: 100vh;
     position: absolute;
-    top: 10em;
+
+    top: 0;
+    /* top: 10.5em; */
     left: ${(props) => (props.show ? "0" : "-110%")};
-
-
     opacity: 1;
   }
   .active {
-    color: yellow;
+    color: ${cls.col6};
     font-weight: bold;
   }
 `;
 
 const MenuItem = styled(NavLink)`
   text-decoration: none;
-  padding: 0.2em;
   height: 100%;
-  color: black;
+  color: ${cls.col4};
   padding: 0.5em;
-  /* border: 2px solid mediumseagreen; */
+  @media screen and (max-width: 770px) {
+    margin: 1em;
+  }
+
   &:after {
     content: "";
     display: block;
@@ -97,6 +175,42 @@ const MenuItem = styled(NavLink)`
   }
   &:hover:after {
     width: 100%;
-    background: yellow;
+    background: ${cls.col6};
   }
+`;
+
+const HighlightContainer = styled.span`
+  position: relative;
+  display: inline-block;
+  &:before {
+    content: "";
+    display: flex;
+    height: 2em;
+    width: 130%;
+    position: absolute;
+    background-image: linear-gradient(
+      135deg,
+      ${cls.col1} 0%,
+      ${cls.col5} 50%,
+      ${cls.col2} 100%
+    );
+    transform: rotate(-2deg);
+    top: -0.3em;
+    left: -0.5em;
+    border: 2px solid ${cls.col1 } ;
+
+    border-radius: 28% 25% 20% 24%;
+    @media screen and (max-width: 770px) {
+      background-image: linear-gradient(
+        135deg,
+        ${cls.col1} 0%,
+        ${cls.col2} 70%,
+        ${cls.col2} 100%
+      );
+    }
+  }
+`;
+
+const Higlight = styled.span`
+  position: relative;
 `;

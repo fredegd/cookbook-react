@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import cbLogo from "../assets/Logo.svg"
+import {cls} from '../colors';
 export default  function Logo(){
   return (
     <LogoContainer>
@@ -9,15 +10,18 @@ export default  function Logo(){
 }
 
 const LogoContainer = styled.div`
-margin: 0 1em;
-padding:0.8em;
-width: 3em;
-height: 3em;
+width: 2.5em;
+height: 2.8em;
 border-radius: 3em;
 display:flex;
 justify-content:center;
 align-items: center;
-background: #abcdef;
-flex-grow: 1;
+background: ${cls.col2};
+z-index: 9999;
+transition: rotate 1s;
+&:hover{
+  rotate: 360deg;
+}
+
 `
 
