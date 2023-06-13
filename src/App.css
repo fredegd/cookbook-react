@@ -59,6 +59,10 @@
 .recipe-view-container {
   background-color: rgba(243, 222, 129, 0.201);
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .recipe-title {
@@ -103,6 +107,7 @@
 
 .recipe-instructions {
   margin-bottom: 40px;
+  width: 65%;
 }
 
 .recipe-instructions ul {
@@ -110,7 +115,20 @@
 }
 
 .recipe-instructions p {
+  text-align: justify;
   margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.slider-images{
+  max-width: 300px;
+}
+
+.carousel .thumb {
+  max-width: 100px; /* Adjust the width as per your preference /
+
+  object-fit: cover; / Ensure the image fills the thumbnail container */
 }
 
 /* ////////////////////////////   end: Recipe-View   /////////////////////////////// */
