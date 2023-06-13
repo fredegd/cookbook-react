@@ -65,5 +65,5 @@ const CrdText = styled.div`
   border-top: 2px solid ${cls.col6};
   border-left: 6px solid ${cls.col6};
   background: ${cls.col3};
-  padding-left: 0.6rem;
+  padding-left: 1rem;
 `;
