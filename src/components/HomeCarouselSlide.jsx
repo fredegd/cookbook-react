@@ -8,7 +8,7 @@ export default function (props) {
       <TextWrap>
         <h2>{slideTitle}</h2>
         <p>{slideDescription}</p>
-        <Link to={`/categories/#${keyword}`}>
+        <Link to={`/categories`}>
         <div className="btn">Learn&nbsp;More</div>
         </Link>
       </TextWrap>

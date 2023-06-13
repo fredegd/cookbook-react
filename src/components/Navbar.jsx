@@ -145,7 +145,7 @@ const Menu = styled.ul`
     opacity: 1;
   }
   .active {
-    color: ${cls.col6};
+    color: ${cls.col1};
     font-weight: bold;
   }
 `;
