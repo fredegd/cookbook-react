@@ -11,7 +11,7 @@ import './css/contactInfo.css';
 function ContactInfo() {
   const iconSize = 28;
   return (
-    <Container className='contactInfo-container text-start mt-5  p-5 fa-lg'>
+    <Container className='contactInfo-container text-start p-5 fa-lg'>
       <Row>
         <h2 className=''>Contact us</h2>
       </Row>
