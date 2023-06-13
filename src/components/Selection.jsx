@@ -62,9 +62,15 @@ const CardsContainer = styled.div`
 `;
 
 const CardRow = styled.div`
+padding: 3em;
   display: flex;
   flex-direction: row;
   overflow: scroll;
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
   @media screen and (max-width: 1000px) {
     width: 95%;
   }
