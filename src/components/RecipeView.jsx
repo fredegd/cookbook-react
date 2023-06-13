@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { client } from "../client";
-import { useParams, Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { client } from '../client';
+import { useParams, Link } from 'react-router-dom';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-
-
 
 export default function RecipeView() {
   const [recipe, setRecipe] = useState(null);
@@ -17,10 +15,12 @@ export default function RecipeView() {
     client
       .getEntry(id)
       .then((response) => {
-        console.log(response.fields, "testtt");
+        console.log(response.fields, 'testtt');
         setRecipe(response.fields);
-        console.log(response.fields.images)
-        setRecipeImgs(response.fields.images)
+        if (response.fields.images) {
+          console.log(response.fields.images);
+          setRecipeImgs(response.fields.images);
+        }
       })
       .catch((err) => console.log(err));
   }, []);
@@ -29,11 +29,9 @@ export default function RecipeView() {
     return <div>Loading...</div>;
   }
 
-  const imageUrl = recipe.thumbnail.fields.file.url.startsWith("http:")
+  const imageUrl = recipe.thumbnail.fields.file.url.startsWith('http:')
     ? recipe.thumbnail.fields.file.url
     : `http:${recipe.thumbnail.fields.file.url}`;
-
-
 
   const options = {
     renderNode: {
@@ -50,28 +48,28 @@ export default function RecipeView() {
   };
 
   return (
-    <div className="recipe-view-container">
-      <h1 className="recipe-title">{recipe.title}</h1>
-      <h4 className="recipe-sub-title">{recipe.subtitle}</h4>
-      <div className="recipe-facts">
+    <div className='recipe-view-container'>
+      <h1 className='recipe-title'>{recipe.title}</h1>
+      <h4 className='recipe-sub-title'>{recipe.subtitle}</h4>
+      <div className='recipe-facts'>
         <h4>Needed time: {recipe.cookingTime}</h4>
         <h4>Difficulty: {recipe.difficulty}</h4>
       </div>
       <div className='recipe-middle'>
-        <div className="recipe-ingredients">
+        <div className='recipe-ingredients'>
           <div>{renderRichText(recipe.ingredientsTable)}</div>
         </div>
-        <img className="recipe-img" src={imageUrl} alt='"Recipe' />
+        <img className='recipe-img' src={imageUrl} alt='"Recipe' />
       </div>
 
-      <div className="recipe-instructions">
+      <div className='recipe-instructions'>
         {renderRichText(recipe.instructions)}
       </div>
       <Carousel>
-      {/* recipeImgs.includes("")&& */}
-        { recipeImgs.map((image, index) => (
-          <img src={`http:${image.fields.file.url}`}alt="" />
-// console.log("https:"+image.fields.file.url)
+        {/* recipeImgs.includes("")&& */}
+        {recipeImgs.map((image, index) => (
+          <img src={`http:${image.fields.file.url}`} alt='' />
+          // console.log("https:"+image.fields.file.url)
           // <div key={index}>
           //   <img src={image.url} alt={`Image ${index}`} />
           // </div>
@@ -91,4 +89,4 @@ export default function RecipeView() {
   transitionTime={500}
 >
   {/* Carousel content */}
-</Carousel>
+</Carousel>;

@@ -1,13 +1,15 @@
-import styled, { StyleSheetManager } from "styled-components";
+import styled, { StyleSheetManager } from 'styled-components';
 
-export default function Footer(){
+export default function Footer() {
   return (
-    <Foot>
-      <p>Copyright &copy; Anne Elvis Fred 2023</p>
-    </Foot>
-  )
+    <div className='footer'>
+      <Foot>
+        <p>Copyright &copy; Anne Elvis Fred 2023</p>
+      </Foot>
+    </div>
+  );
 }
 
 const Foot = styled.div`
-padding: 4em;
-`
+  padding: 4em;
+`;
