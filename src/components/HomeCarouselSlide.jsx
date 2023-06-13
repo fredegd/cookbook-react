@@ -1,13 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 export default function (props) {
   const { id, slideTitle, slideDescription, slideBg } = props;
   return (
-    <SlideWrap key={id} style={{ backgroundImage: `url(${slideBg})` }}>
+    <SlideWrap key={id} style={{ backgroundImage: `url(${slideBg})` }} >
       <TextWrap>
         <h2>{slideTitle}</h2>
         <p>{slideDescription}</p>
-        <a href="/" className="btn">Learn&nbsp;More</a>
+        <Link to={`/categories/#${keyword}`}>
+        <div className="btn">Learn&nbsp;More</div>
+        </Link>
       </TextWrap>
     </SlideWrap>
   );
