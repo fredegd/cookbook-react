@@ -24,7 +24,7 @@ export default function Selection({ keyword }) {
 
   return (
     <>
-      <Title>{keyword}</Title>
+      <Title id={keyword}>{keyword}</Title>
       <CardsContainer>
         <CardRow>
           {recipes.map((recipe) => (
