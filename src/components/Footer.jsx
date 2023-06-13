@@ -11,5 +11,7 @@ export default function Footer() {
 }
 
 const Foot = styled.div`
-  padding: 4em;
+  padding-top: 4em;
+  padding-left: 4em;
+  padding-bottom: 1em;
 `;
