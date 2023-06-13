@@ -1,5 +1,5 @@
 import '../App.css';
-import {cls} from '../colors';
+import { cls } from '../colors';
 import styled from 'styled-components';
 export default function RecipeCard({ recipe }) {
   return (
@@ -8,8 +8,7 @@ export default function RecipeCard({ recipe }) {
         style={{
           backgroundImage: `url(${recipe.fields.thumbnail.fields.file.url})`,
         }}
-      >
-      </Img>
+      ></Img>
       <CrdText>
         <h5>{recipe.fields.title}</h5>
         <p>
@@ -35,15 +34,14 @@ const CardWrap = styled.div`
   flex-direction: column;
   align-items: center;
   transition: all 0.5s;
-  border-radius:2em;
-  &:hover{
+  border-radius: 2em;
+  &:hover {
     /* margin: 1em 0 ; */
   }
-  &:hover>*{
+  &:hover > * {
     width: 104%;
-    }
-
-  `
+  }
+`;
 
 const Img = styled.div`
   min-height: 300px;
@@ -53,10 +51,9 @@ const Img = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  border-radius:2em 2em 0 0 ;
-  border-top:4px solid ${cls.col6};
+  border-radius: 2em 2em 0 0;
+  border-top: 4px solid ${cls.col6};
   border-left: 6px solid ${cls.col6};
-
 `;
 
 const CrdText = styled.div`
@@ -65,7 +62,8 @@ const CrdText = styled.div`
   height: auto;
   /* line-height: 0.8em; */
   border-radius: 0 0 2em 2em;
-  border-top:2px solid ${cls.col6};
+  border-top: 2px solid ${cls.col6};
   border-left: 6px solid ${cls.col6};
   background: ${cls.col3};
-  `
+  padding-left: 1rem;
+`;
