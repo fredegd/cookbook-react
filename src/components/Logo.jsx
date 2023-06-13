@@ -13,6 +13,7 @@ const LogoContainer = styled.div`
 width: 2.5em;
 height: 2.8em;
 border-radius: 3em;
+margin-left: 1em;
 display:flex;
 justify-content:center;
 align-items: center;

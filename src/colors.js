@@ -6,6 +6,3 @@ export const cls = {
     "col5": "#fdfced", // white
     "col6":"#fdfced"
   };
-  // "col2": "#abcdef",
-  // "col3": "rgb(60, 179, 113)",
-  //  "col3": "#ffaa00",
