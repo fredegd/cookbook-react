@@ -60,19 +60,20 @@ export default function RecipeList() {
 
 const SearchContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin-bottom: 1em;
+
 `;
 
 const SearchForm = styled.form`
   display: flex;
+
 `;
 
 const SearchInput = styled.input`
   width: 200px;
   padding: 0.5em;
-  border-radius: 4px;
-  border: 1px solid ${cls.col6};
+  border-radius: 1em;
 `;
 
 const CardsContainer = styled.div`
