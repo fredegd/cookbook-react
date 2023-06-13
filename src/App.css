@@ -4,7 +4,8 @@
 }
 
 #root {
-  background-color: #585856;
+
+  background-color: #fdfced;
   display: flex;
   flex-direction: column;
   /*  
