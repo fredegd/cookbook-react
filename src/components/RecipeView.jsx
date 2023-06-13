@@ -68,7 +68,8 @@ export default function RecipeView() {
       <Carousel>
         {/* recipeImgs.includes("")&& */}
         {recipeImgs.map((image, index) => (
-          <img src={`http:${image.fields.file.url}`} alt='' />
+          <img src={`http:${image.fields.file.url}`} alt='' className="slider-images"
+          />
           // console.log("https:"+image.fields.file.url)
           // <div key={index}>
           //   <img src={image.url} alt={`Image ${index}`} />
