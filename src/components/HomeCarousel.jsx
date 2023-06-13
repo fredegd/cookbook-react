@@ -22,7 +22,11 @@ export default function HomeCarousel() {
       const slideTitle = fields.title;
       const slideDescription = fields.description;
       const slideBg = fields.image.fields.file.url;
-      const updatedSlide = { id, slideTitle, slideDescription, slideBg };
+      console.log(slideBg)
+      const slideCategory = fields.category;
+      console.log(slideCategory)
+      
+      const updatedSlide = { id, slideTitle, slideDescription, slideBg, slideCategory };
       return updatedSlide;
     });
     setCarouselSlides(cleanSlides);
@@ -66,13 +70,14 @@ export default function HomeCarousel() {
         modules={[Autoplay, Pagination, Navigation]}
       >
         {carouselSlides.map((item) => {
-          const { id, slideBg, slideTitle, slideDescription } = item;
+          const { id, slideBg, slideTitle, slideDescription, slideCategory } = item;
           return (
             <SwiperSlide key={id}>
               <HomeCarouselSlide
                 slideTitle={slideTitle}
                 slideDescription={slideDescription}
                 slideBg={slideBg}
+                slideCategory={slideCategory}
               />
             </SwiperSlide>
           );

@@ -2,15 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 export default function (props) {
-  const { id, slideTitle, slideDescription, slideBg } = props;
+  const { id, slideTitle, slideDescription, slideBg, slideCategory } = props;
   return (
     <SlideWrap key={id} style={{ backgroundImage: `url(${slideBg})` }} >
       <TextWrap>
         <h2>{slideTitle}</h2>
         <p>{slideDescription}</p>
-        <Link to={`/categories`}>
-        <div className="btn">Learn&nbsp;More</div>
-        </Link>
+        {/* <Link to={`/categories/#${slideCategory}`}> */}
+          <a className="btn" href= {`/categories/#${slideCategory}`}>Learn&nbsp;More</a>
+        {/* <div className="btn">Learn&nbsp;More</div> */}
+        {/* </Link> */}
       </TextWrap>
     </SlideWrap>
   );

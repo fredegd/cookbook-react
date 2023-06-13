@@ -78,6 +78,7 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   @media screen and (max-width: 770px) {
     width: auto;
     flex-direction: column;
