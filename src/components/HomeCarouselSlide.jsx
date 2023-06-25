@@ -9,7 +9,8 @@ export default function (props) {
         <h2>{slideTitle}</h2>
         <p>{slideDescription}</p>
         {/* <Link to={`/categories/#${slideCategory}`}> */}
-          <a className="btn" href= {`/categories/#${slideCategory}`}>Learn&nbsp;More</a>
+          <a className="btn" href= {`/categories/#indian`}>Learn&nbsp;More</a>
+          {/* <a className="btn" href= {`/categories/#${slideCategory}`}>Learn&nbsp;More</a> */}
         {/* <div className="btn">Learn&nbsp;More</div> */}
         {/* </Link> */}
       </TextWrap>
