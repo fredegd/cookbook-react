@@ -3,13 +3,11 @@ import { client } from "../client";
 import HomeCarouselSlide from "./HomeCarouselSlide";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination, Autoplay, Navigation } from "swiper";
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import styled, { StyleSheetManager } from "styled-components";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
-SwiperCore.use({ Navigation });
 
 export default function HomeCarousel() {
   const [isCarouselLoading, setIsCarouselLoading] = useState(false);
